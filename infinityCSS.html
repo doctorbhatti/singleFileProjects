@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>infinity Symbol Using CSS</title>
+  <style>
+    .infinity {
+      position: relative;
+      width: 212px;
+      height: 100px;
+    }
+
+    .infinity::before,
+    .infinity::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 20px solid gold;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(-45deg);
+    }
+
+    .infinity::after {
+      left: auto;
+      right: 0;
+      border-radius: 50px 50px 50px 0;
+      transform: rotate(45deg);
+    }
+    
+    /*
+    Below is flexbox approach to center everything
+    */
+    body {
+      background-color: #8d8d8d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      height: 100vh;
+    }
+  </style>
+</head>
+</head>
+
+<body>
+  <div class="infinity"></div>
+</body>
+
+</html>

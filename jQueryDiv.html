@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="description" content="Dynamically Add/Remove Input Field Using jQuery">
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+  <meta name="author" content="Hassan Ashfaq Bhatti">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamically Add/Remove Input Field</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
+F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container text-center bg-dark text-light my-5 p-3">
+    <h1>Dynamically Add/Remove Table Row</h1>
+    <h3>Using jQuery</h3>
+  </div>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="dynamicadd">
+        <tr>
+          <td><input type="text" name="name[]" id="name" class="form-control"></td>
+          <td><input type="email" name="email[]" id="email" class="form-control"></td>
+          <td><input type="text" name="phone[]" id="phone" class="form-control"></td>
+          <td><input type="file" name="photo[]" id="photo" class="form-control"></td>
+          <td><button type="button" id="add" class="btn btn-success">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var i = 1;
+      $('#add').click(function() {
+        //alert('ok');
+        i++;
+        $('#dynamicadd').append('<tr id="row' + i + '"><td><input type="text" name="name[]" id = "name"class = "form-control" > </td> <td> <input type="email" name="email[]" id="email" class="form-control"></td> <td><input type="text" name="phone[]" id="phone" class="form-control"></td> <td> <input type="file" name="photo[]" id="photo" class="form-control"></td><td><button type="button" id="' + i + '" class="btn btn-danger remove_row">Remove</button></td></tr>');
+      });
+      $(document).on('click', '.remove_row', function() {
+        var row_id = $(this).attr("id");
+        $('#row' + row_id + '').remove();
+      });
+    });
+  </script>
+</body>

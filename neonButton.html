@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+  <meta name="author" content="Hassan Ashfaq Bhatti">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Button</title>
+  <!--
+  In the box-shadow property:
+
+the first value represents the offset on the x-axis
+the second value represents the offset on the y-axis
+the third value represents the blur radius
+the fourth value represents the spread radius
+the fifth value is the color to be applied to the shadow
+I only wanted the spread radius and color, so I set other values to zero. Then I made the last of the box-shadow values apply to the inside of the button by attaching inset to it.
+  -->
+  <style>
+    html {
+      background-color: #000;
+    }
+
+    /*
+    Below is flexbox approach to center everything
+    */
+    body {
+      background-color: #8d8d8d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      height: 100vh;
+    }
+
+    button {
+      background-color: #000;
+      border: .5px solid crimson;
+      border-radius: 10px;
+      color: #fff;
+      padding: 8px;
+      box-shadow: 0 0 30px 0 crimson,
+        0 0 30px 0 crimson,
+        0 0 10px 0 crimson inset;
+    }
+  </style>
+</head>
+
+<body>
+  <button>Neon Light Button</button>
+</body>
