@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+  <meta name="author" content="Hassan Ashfaq Bhatti">
+    <title>Progress Bar</title>
+</head>
+<body>
+    <div class="progress-bar-wrapper">
+        <div class="progress-bar"></div>
+    </div>
+    <button onclick="load_something(3)">Load</button>
+
+    <style>
+        .progress-bar-wrapper {
+            width: auto;
+            height: 50px;
+            background-color: crimson;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 7px;
+            background-color: coral;
+        }
+    </style>
+<script>
+    function load_something(seconds) {
+        const progress_bar = document.querySelector('.progress-bar')
+        let percent = 0
+        const interval = setInterval(() => {
+            percent += 1
+            progress_bar.style.width = percent + '%'
+            if (percent > 100) {
+                clearInterval(interval)
+            }
+        }, (seconds * 1000)/100);
+    }
+</script>
+<!--Alternate way with CSS approach
+<script>
+    function load_something(seconds) {
+        const progress_bar = document.querySelector('.progress-bar')
+        progress_bar.style.transition = `${seconds}s linear width`
+        progress_bar.style.width = '100%'
+    }
+</script>
+-->
+</body>
+</html>
+
+
