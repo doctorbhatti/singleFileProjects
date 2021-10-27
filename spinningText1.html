@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spinning Text 1</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      perspective: 500px;
+    }
+
+    .banner {
+      display: flex;
+    }
+
+    $width: 21px;
+
+    .panel {
+      position: relative;
+      width: $width;
+      height: 120px;
+      // border: 1px solid white;
+      overflow: hidden;
+      animation: rotate 6s var(--delay) infinite ease-in-out alternate;
+    }
+
+    @keyframes rotate {
+
+      0%,
+      10% {
+        transform: rotateX(0deg);
+      }
+
+      90%,
+      100% {
+        transform: rotateX(720deg);
+      }
+    }
+
+    .panel::before {
+      position: absolute;
+      left: var(--left);
+      content: "Hello World";
+      font-size: 96px;
+      width: max-content;
+      color: hsl(var(--hue), 75%, 75%);
+    }
+
+    @for $i from 0 to 24 {
+      .panel:nth-child(#{$i + 1}) {
+        --left: #{$width * $i * -1};
+        --hue: #{360 / 24 * $i};
+        --delay: #{$i * 0.1s};
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+  </div>
+</body>
+
+</html>
