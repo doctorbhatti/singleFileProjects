@@ -5,6 +5,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Example</title>
      <script src="https://cdn-tailwindcss.vercel.app?plugins=forms"></script>
+     <style>
+        /*
+    Below is flexbox approach to center everything
+    */
+    body {
+      background-color: #8d8d8d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      height: 100vh;
+    }
+
+     </style>
     </head>
     <body>
       <input type="text" class="shadow-sm border-gray-300 rounded-lg m-2 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400" placeholder="Enter some text..." enterkeyhint="done"></input>
