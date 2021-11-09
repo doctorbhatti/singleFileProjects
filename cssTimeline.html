@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Timeline</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+    .design-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #1f1f1f;
+      min-height: 100vh;
+      padding: 100px 0;
+      font-family: Jost;
+    }
+
+    .design {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline {
+      width: 80%;
+      height: auto;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background: #1f1f1f;
+      -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+      box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+      border-radius: 5px;
+      color: white;
+      padding: 1.75rem;
+      transition: 0.4s ease;
+      overflow-wrap: break-word !important;
+      margin: 1rem;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    .timeline-component {
+      margin: 0px 20px 20px 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .timeline {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
+      }
+
+      .timeline-middle {
+        position: relative;
+        background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+        width: 3px;
+        height: 100%;
+      }
+
+      .main-middle {
+        opacity: 0;
+      }
+
+      .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+  </style>
+  <!--This is the main container that contains the whole timeline.-->
+  <section class="design-section">
+    <div class="timeline">
+      <!--Well, The reason for this div is to fill space. 
+This space is technically used for keeping dates, 
+but I didn't find the need for dates. However, I'll provide 
+you the styling for dates, so that you can use it if you 
+wanted to.-->
+      <div class="timeline-empty">
+      </div>
+      <!--This is the class where the timeline graphics are 
+housed in. Note that we have timeline-circle 
+here for that pointer in timeline.-->
+      <div class="timeline-middle">
+        <div class="timeline-circle"></div>
+      </div>
+      <div class="timeline-component timeline-content">
+        <h3>HTML</h3>
+        <p>Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.</p>
+      </div>
+      <div class="timeline-component timeline-content">
+        <h3>CSS</h3>
+        <p>CSS stands for Cascading Style Sheets. It is the language for describing the presentation of Web pages, including colours, layout, and fonts, thus making our web pages presentable to the users. CSS is designed to make style sheets for the web. It is independent of HTML and can be used with any XML-based markup language. CSS is popularly called the design language of the web.</p>
+      </div>
+      <div class="timeline-middle">
+        <div class="timeline-circle"></div>
+      </div>
+      <div class="timeline-empty">
+      </div>
+      <div class="timeline-empty">
+      </div>
+      <div class="timeline-middle">
+        <div class="timeline-circle"></div>
+      </div>
+      <div class=" timeline-component timeline-content">
+        <h3>Javascript</h3>
+        <p>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third of the web trio.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+</body>
+
+</html>
