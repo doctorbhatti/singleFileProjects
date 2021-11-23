@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- <meta charset="utf-8">
- <title>Text Animation</title> 
- <style type="text/css">
- *{
-  margin: 0;
-  padding: 0;
- }
-  
- ul{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: ;
- }
- ul li{
-  list-style: none;
-  float: left;
-  font-family: arial;
-  font-size: 5em;
-  font-weight: bold;
-  transform-origin: left;
-  animation: animate 3s infinite;
- }
- @keyframes animate{
-  0%{
-   opacity: 0;
-   transform: rotateY(90deg) translateY(-30px);
-  }
-  50%{
-   opacity: 1;
-   transform: rotateY(0deg) translateX(20px) scale(0.4);
-  }
-  100%{
-   opacity: 0;
-   transform: rotateY(0deg) translateX(-30px);
-  }
- }
- ul li:nth-child(1){
-  animation-delay: 0s;
- }
- ul li:nth-child(2){
-  animation-delay: .2s;
- }
- ul li:nth-child(3){
-  animation-delay: .4s;
- }
- ul li:nth-child(4){
-  animation-delay: .6s;
- }
- ul li:nth-child(5){
-  animation-delay: .8s;
- }
- ul li:nth-child(6){
-  animation-delay: 1s;
- }
- ul li:nth-child(7){
-  animation-delay: 1.2s;
- }
-</style>
+  <meta charset="utf-8">
+  <title>Text Animation</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: ;
+    }
+
+    ul li {
+      list-style: none;
+      float: left;
+      font-family: arial;
+      font-size: 5em;
+      font-weight: bold;
+      transform-origin: left;
+      animation: animate 3s infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+        transform: rotateY(90deg) translateY(-30px);
+      }
+
+      50% {
+        opacity: 1;
+        transform: rotateY(0deg) translateX(20px) scale(0.4);
+      }
+
+      100% {
+        opacity: 0;
+        transform: rotateY(0deg) translateX(-30px);
+      }
+    }
+
+    ul li:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    ul li:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    ul li:nth-child(3) {
+      animation-delay: .4s;
+    }
+
+    ul li:nth-child(4) {
+      animation-delay: .6s;
+    }
+
+    ul li:nth-child(5) {
+      animation-delay: .8s;
+    }
+
+    ul li:nth-child(6) {
+      animation-delay: 1s;
+    }
+
+    ul li:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+  </style>
 </head>
+
 <body>
- <!--<div><img src="img.jpg" width="100%">-->
- <ul>
-  <li>W</li>
-  <li>E</li>
-  <li>L</li>
-  <li>C</li>
-  <li>O</li>
-  <li>M</li>
-  <li>E</li>
- </ul>
-</div>
+  <!--<div><img src="img.jpg" width="100%">-->
+  <ul>
+    <li>W</li>
+    <li>E</li>
+    <li>L</li>
+    <li>C</li>
+    <li>O</li>
+    <li>M</li>
+    <li>E</li>
+  </ul>
+  </div>
 </body>
+
 </html>

@@ -1,22 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@400;500&display=swap');
 
-body{
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #fff;
-    font-family: Arial;
-    text-align: center;
-    font-size: 12px;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #fff;
+  font-family: Arial;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.body{
+.body {
   position: absolute;
   top: -20px;
   left: -20px;
@@ -32,46 +32,46 @@ body{
 
 
 
-#formDiv{
-    height: 200px;
-    width: 700px;
-    border-radius: 5px;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
+#formDiv {
+  height: 200px;
+  width: 700px;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 
-    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.09);
-    border-top: 2px solid rgba(225, 225, 225, 0.3);
-    border-left: 2px solid rgba(225, 225, 225, 0.1);
-    border-right: 1px solid rgba(225, 225, 225, 0.2);
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.09);
+  border-top: 2px solid rgba(225, 225, 225, 0.3);
+  border-left: 2px solid rgba(225, 225, 225, 0.1);
+  border-right: 1px solid rgba(225, 225, 225, 0.2);
 
-/*  WHITE FROST */
-/*  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+  /*  WHITE FROST */
+  /*  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
     background-color: rgb(228 228 228 / 15%);  */
- 
-/*  GRAY FROST */
-/*  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 10%);
+
+  /*  GRAY FROST */
+  /*  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 10%);
     background-color: rgb(228 228 228 / 8%);  */
-  
-/*  GRAY FROST using filter: drop shadow */
+
+  /*  GRAY FROST using filter: drop shadow */
   filter: drop-shadow(2px 4px 6px black);
-    background-color: rgb(152 151 151 / 35%);
-    box-shadow: inset 0 0 0 200px rgb(255 255 255 / 8%);  
-  
-/*  GRAYSCALE GLASS */
-/*  backdrop-filter: grayscale(.8) blur(5px);
+  background-color: rgb(152 151 151 / 35%);
+  box-shadow: inset 0 0 0 200px rgb(255 255 255 / 8%);
+
+  /*  GRAYSCALE GLASS */
+  /*  backdrop-filter: grayscale(.8) blur(5px);
     box-shadow: inset 0 0 0 200px rgba(255,255,255,0.08);  */
-  
+
 }
 
 
-.header{
+.header {
   position: absolute;
   top: calc(48% - 35px);
   left: calc(47% - 255px);
   z-index: 2;
 }
 
-.header div{
+.header div {
   float: left;
   color: #fff;
   font-family: 'Fredoka One';
@@ -79,11 +79,11 @@ body{
   font-weight: 200;
 }
 
-.header div span{
+.header div span {
   color: #542b67 !important;
 }
 
-.login{
+.login {
   position: absolute;
   top: calc(49% - 75px);
   left: calc(50% - 50px);
@@ -93,11 +93,11 @@ body{
   z-index: 2;
 }
 
-.login input[type=text]{
+.login input[type=text] {
   width: 250px;
   height: 30px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   color: #fff;
   font-family: 'Raleway';
@@ -106,11 +106,11 @@ body{
   padding: 4px 4px 2px 10px;
 }
 
-.login input[type=password]{
+.login input[type=password] {
   width: 250px;
   height: 30px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -120,7 +120,7 @@ body{
   margin-top: 10px;
 }
 
-.login input[type=button]{
+.login input[type=button] {
   transition: all 0.4s ease;
   width: 260px;
   height: 35px;
@@ -135,40 +135,40 @@ body{
   padding: 6px;
   margin-top: 10px;
   border-radius: 25px;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.login input[type=button]:hover{
+.login input[type=button]:hover {
   opacity: 0.8;
   color: black;
   background: #fff;
   border: 1px solid #fff;
   border-radius: 25px;
-  
+
 }
 
-.login input[type=button]:active{
+.login input[type=button]:active {
   opacity: 0.6;
 }
 
-.login input[type=text]:focus{
+.login input[type=text]:focus {
   outline: none;
-  border: 1px solid rgba(255,255,255,0.9);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type=password]:focus{
+.login input[type=password]:focus {
   outline: none;
-  border: 1px solid rgba(255,255,255,0.9);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type=button]:focus{
+.login input[type=button]:focus {
   outline: none;
 }
 
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
+::-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }

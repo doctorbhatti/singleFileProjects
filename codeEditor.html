@@ -2,17 +2,16 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css" integrity="sha512-6sALqOPMrNSc+1p5xOhPwGIzs6kIlST+9oGWlI4Wwcbj1saaX9J3uzO3Vub016dmHV7hM+bMi/rfXLiF5DNIZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js" integrity="sha512-w8mdbtlkBpU0p/dbFb4Oa1Hfd5k2mvOX82w0FnArHOPB28Ixai1Uj68X/3aK+/+35zNbTzBf9OfuSG+XTwnwCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/javascript/javascript.min.js" integrity="sha512-DJ/Flq7rxJDDhgkO49H/rmidX44jmxWot/ku3c+XXEF9XFal78KIpu7w6jEaQhK4jli1U3/yOH+Rp3cIIEYFPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css" integrity="sha512-6sALqOPMrNSc+1p5xOhPwGIzs6kIlST+9oGWlI4Wwcbj1saaX9J3uzO3Vub016dmHV7hM+bMi/rfXLiF5DNIZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js" integrity="sha512-w8mdbtlkBpU0p/dbFb4Oa1Hfd5k2mvOX82w0FnArHOPB28Ixai1Uj68X/3aK+/+35zNbTzBf9OfuSG+XTwnwCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/javascript/javascript.min.js" integrity="sha512-DJ/Flq7rxJDDhgkO49H/rmidX44jmxWot/ku3c+XXEF9XFal78KIpu7w6jEaQhK4jli1U3/yOH+Rp3cIIEYFPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
-<textarea id="editor" style="width:100%;min-height:10rem;">
+  <textarea id="editor" style="width:100%;min-height:10rem;">
   var id = null;
 function myMove() {
   var elem = document.getElementById("myAnimation");
@@ -30,12 +29,12 @@ function myMove() {
   }
 }
 </textarea>
-<script>
-  let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-  mode: "javascript",
-  lineNumbers: true
-});
-</script>
+  <script>
+    let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+      mode: "javascript",
+      lineNumbers: true
+    });
+  </script>
 </body>
 
 </html>

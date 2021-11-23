@@ -13,9 +13,11 @@
   <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
   <title>diagnosis is clinical definition - Google Search</title>
   <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
-    (function() { window.google = { kEI: 'st93YYzxFYa_UuDalLgL', kEXPI: '31', u: '95d2cba0', kBL: 'BfWv' };
+    (function() {
+      window.google = { kEI: 'st93YYzxFYa_UuDalLgL', kEXPI: '31', u: '95d2cba0', kBL: 'BfWv' };
       google.sn = 'web';
-      google.kHL = 'en-PK'; })();
+      google.kHL = 'en-PK';
+    })();
     (function() {
       var f = this || self;
       var h, k = [];
@@ -24,25 +26,38 @@
 
       function m(a) { for (var b = null; a && (!a.getAttribute || !(b = a.getAttribute("leid")));) a = a.parentNode; return b }
 
-      function n(a, b, c, d, g) { var e = "";
+      function n(a, b, c, d, g) {
+        var e = "";
         c || -1 !== b.search("&ei=") || (e = "&ei=" + l(d), -1 === b.search("&lei=") && (d = m(d)) && (e += "&lei=" + d));
-        d = "";!c && f._cshid && -1 === b.search("&cshid=") && "slh" !== a && (d = "&cshid=" + f._cshid);
-        c = c || "/" + (g || "gen_204") + "?atyp=i&ct=" + a + "&cad=" + b + e + "&zx=" + Date.now() + d; /^http:/i.test(c) && "https:" === window.location.protocol && (google.ml && google.ml(Error("a"), !1, { src: c, glmm: 1 }), c = ""); return c };
+        d = "";
+        !c && f._cshid && -1 === b.search("&cshid=") && "slh" !== a && (d = "&cshid=" + f._cshid);
+        c = c || "/" + (g || "gen_204") + "?atyp=i&ct=" + a + "&cad=" + b + e + "&zx=" + Date.now() + d;
+        /^http:/i.test(c) && "https:" === window.location.protocol && (google.ml && google.ml(Error("a"), !1, { src: c, glmm: 1 }), c = "");
+        return c
+      };
       h = google.kEI;
       google.getEI = l;
       google.getLEI = m;
       google.ml = function() { return null };
-      google.log = function(a, b, c, d, g) { if (c = n(a, b, c, d, g)) { a = new Image; var e = k.length;
+      google.log = function(a, b, c, d, g) {
+        if (c = n(a, b, c, d, g)) {
+          a = new Image;
+          var e = k.length;
           k[e] = a;
           a.onerror = a.onload = a.onabort = function() { delete k[e] };
-          a.src = c } };
+          a.src = c
+        }
+      };
       google.logUrl = n;
     }).call(this);
     (function() {
       google.y = {};
       google.sy = [];
-      google.x = function(a, b) { if (a) var c = a.id;
-        else { do c = Math.random(); while (google.y[c]) } google.y[c] = [a, b]; return !1 };
+      google.x = function(a, b) {
+        if (a) var c = a.id;
+        else { do c = Math.random(); while (google.y[c]) } google.y[c] = [a, b];
+        return !1
+      };
       google.sx = function(a) { google.sy.push(a) };
       google.lm = [];
       google.plm = function(a) { google.lm.push.apply(google.lm, a) };
@@ -54,12 +69,22 @@
     }).call(this);
     google.f = {};
     (function() {
-      document.documentElement.addEventListener("submit", function(b) { var a; if (a = b.target) { var c = a.getAttribute("data-submitfalse");
-          a = "1" === c || "q" === c && !a.elements.q.value ? !0 : !1 } else a = !1;
-        a && (b.preventDefault(), b.stopPropagation()) }, !0);
-      document.documentElement.addEventListener("click", function(b) { var a;
-        a: { for (a = b.target; a && a !== document.documentElement; a = a.parentElement)
-            if ("A" === a.tagName) { a = "1" === a.getAttribute("data-nohref"); break a } a = !1 } a && b.preventDefault() }, !0);
+      document.documentElement.addEventListener("submit", function(b) {
+        var a;
+        if (a = b.target) {
+          var c = a.getAttribute("data-submitfalse");
+          a = "1" === c || "q" === c && !a.elements.q.value ? !0 : !1
+        } else a = !1;
+        a && (b.preventDefault(), b.stopPropagation())
+      }, !0);
+      document.documentElement.addEventListener("click", function(b) {
+        var a;
+        a: {
+          for (a = b.target; a && a !== document.documentElement; a = a.parentElement)
+            if ("A" === a.tagName) { a = "1" === a.getAttribute("data-nohref"); break a } a = !1
+        }
+        a && b.preventDefault()
+      }, !0);
     }).call(this);
     (function() { google.hs = { di: true, h: true, peh: true, sie: false }; })();
     (function() {
@@ -69,42 +94,75 @@
         var g = window.performance;
         google.timers = {};
         google.startTick = function(a) { google.timers[a] = { t: { start: Date.now() }, e: {}, m: {} } };
-        google.tick = function(a, b, c) { google.timers[a] || google.startTick(a);
+        google.tick = function(a, b, c) {
+          google.timers[a] || google.startTick(a);
           c = void 0 !== c ? c : Date.now();
-          b instanceof Array || (b = [b]); for (var d = 0, f; f = b[d++];) google.timers[a].t[f] = c };
+          b instanceof Array || (b = [b]);
+          for (var d = 0, f; f = b[d++];) google.timers[a].t[f] = c
+        };
         google.c.e = function(a, b, c) { google.timers[a].e[b] = c };
-        google.c.b = function(a) { var b = google.timers.load.m;
+        google.c.b = function(a) {
+          var b = google.timers.load.m;
           b[a] && google.ml(Error("a"), !1, { m: a });
-          b[a] = !0 };
-        google.c.u = function(a) { var b = google.timers.load.m; if (b[a]) { b[a] = !1; for (a in b)
+          b[a] = !0
+        };
+        google.c.u = function(a) {
+          var b = google.timers.load.m;
+          if (b[a]) {
+            b[a] = !1;
+            for (a in b)
               if (b[a]) return;
-            google.csiReport() } else { var c = "",
-              d; for (d in b) c += d + ":" + b[d] + ";";
-            google.ml(Error("b"), !1, { m: a, b: !1 === b[a], s: c }) } };
+            google.csiReport()
+          } else {
+            var c = "",
+              d;
+            for (d in b) c += d + ":" + b[d] + ";";
+            google.ml(Error("b"), !1, { m: a, b: !1 === b[a], s: c })
+          }
+        };
 
         function h(a, b, c, d) { a.addEventListener ? a.addEventListener(b, c, d || !1) : a.attachEvent && a.attachEvent("on" + b, c) }
 
         function k(a, b, c, d) { "addEventListener" in a ? a.removeEventListener(b, c, d || !1) : a.attachEvent && a.detachEvent("on" + b, c) }
         google.rll = function(a, b, c) {
-          function d(f) { c(f);
+          function d(f) {
+            c(f);
             k(a, "load", d);
-            k(a, "error", d) } h(a, "load", d);
-          b && h(a, "error", d) };
+            k(a, "error", d)
+          }
+          h(a, "load", d);
+          b && h(a, "error", d)
+        };
         e.google.aft = function(a) { a.setAttribute("data-iml", String(Date.now())) };
         google.startTick("load");
         var l = google.timers.load;
-        a: { var m = l.t; if (g) { var n = g.timing; if (n) { var p = n.navigationStart,
-                q = n.responseStart; if (q > p && q <= m.start) { m.start = q;
-                l.wsrt = q - p; break a } } g.now && (l.wsrt = Math.floor(g.now())) } }
+        a: {
+          var m = l.t;
+          if (g) {
+            var n = g.timing;
+            if (n) {
+              var p = n.navigationStart,
+                q = n.responseStart;
+              if (q > p && q <= m.start) {
+                m.start = q;
+                l.wsrt = q - p;
+                break a
+              }
+            }
+            g.now && (l.wsrt = Math.floor(g.now()))
+          }
+        }
 
         function r(a) { return "hidden" === document.visibilityState ? (google.c.fh = a, !0) : !1 }
 
         function t(a) { r(a.timeStamp) && k(document, "visibilitychange", t, !0) } google.c.wve && (google.c.fh = Infinity, h(document, "visibilitychange", t, !0), r(0));
         google.c.b("pr");
         google.c.b("xe");
-        if (google.c.gl) { var u = function(a) { a && e.google.aft(a.target) };
+        if (google.c.gl) {
+          var u = function(a) { a && e.google.aft(a.target) };
           h(document.documentElement, "load", u, !0);
-          google.c.glu = function() { k(document.documentElement, "load", u, !0) } };
+          google.c.glu = function() { k(document.documentElement, "load", u, !0) }
+        };
       }).call(this);
     })();
     (function() {
@@ -112,21 +170,34 @@
 
       function n(a) { if (!a || r(a)) return 0; if (!a.getBoundingClientRect) return 1; var c = function(b) { return b.getBoundingClientRect() }; return t(a, c) ? 0 : u(a, c) }
 
-      function t(a, c) { var b;
-        a: { for (b = a; b && void 0 !== b; b = b.parentElement)
-            if ("hidden" === b.style.overflow) break a;b = null }
+      function t(a, c) {
+        var b;
+        a: {
+          for (b = a; b && void 0 !== b; b = b.parentElement)
+            if ("hidden" === b.style.overflow) break a;b = null
+        }
         if (!b) return !1;
         a = c(a);
-        c = c(b); return a.bottom < c.top || a.top >= c.bottom || a.right < c.left || a.left >= c.right }
+        c = c(b);
+        return a.bottom < c.top || a.top >= c.bottom || a.right < c.left || a.left >= c.right
+      }
 
       function r(a) { return "none" === a.style.display ? !0 : document.defaultView && document.defaultView.getComputedStyle ? (a = document.defaultView.getComputedStyle(a), !!a && ("hidden" === a.visibility || "0px" === a.height && "0px" === a.width)) : !1 }
 
-      function u(a, c) { var b = c(a);
+      function u(a, c) {
+        var b = c(a);
         a = b.left + window.pageXOffset;
-        c = b.top + window.pageYOffset; var d = b.width;
-        b = b.height; var e = 0; if (0 >= b && 0 >= d) return e; var f = window.innerHeight || document.documentElement.clientHeight;
-        0 > c + b ? e = 2 : c >= f && (e = 4); if (0 > a + d || a >= (window.innerWidth || document.documentElement.clientWidth)) e |= 8;
-        e || (e = 1, c + b > f && (e |= 4)); return e };
+        c = b.top + window.pageYOffset;
+        var d = b.width;
+        b = b.height;
+        var e = 0;
+        if (0 >= b && 0 >= d) return e;
+        var f = window.innerHeight || document.documentElement.clientHeight;
+        0 > c + b ? e = 2 : c >= f && (e = 4);
+        if (0 > a + d || a >= (window.innerWidth || document.documentElement.clientWidth)) e |= 8;
+        e || (e = 1, c + b > f && (e |= 4));
+        return e
+      };
       var v = window.location,
         w = "aft frt hct prt pprt sct".split(" ");
 
@@ -145,14 +216,19 @@
         K = !0,
         L = -1;
 
-      function M(a, c, b, d) { var e = google.timers.load.t[a];
-        e && (b || d && null != c && c < e) || google.tick("load", a, c) }
+      function M(a, c, b, d) {
+        var e = google.timers.load.t[a];
+        e && (b || d && null != c && c < e) || google.tick("load", a, c)
+      }
 
-      function N(a, c, b, d) { "1" === a.getAttribute("data-frt") && (M("frt", d, !1, !0), ++D, O());
+      function N(a, c, b, d) {
+        "1" === a.getAttribute("data-frt") && (M("frt", d, !1, !0), ++D, O());
         c && (M("aft", d, !1, !0), M("afti", d, !1, !0), ++F, b || ++I, O());
-        google.c.timl && M("iml", d, !1, !0);++A;
+        google.c.timl && M("iml", d, !1, !0);
+        ++A;
         a.setAttribute("data-frt", "0");
-        (google.c.timl || c) && P() }
+        (google.c.timl || c) && P()
+      }
 
       function P() { var a = google.c.timl ? A === z : E === F;!K && a && google.c.u("il") }
 
@@ -162,23 +238,40 @@
             c = D === C,
             b = I === H;
           b = google.c.nli ? b : a;
-          if (a && c) { google.c.e("load", "ima", String(E));
+          if (a && c) {
+            google.c.e("load", "ima", String(E));
             google.c.e("load", "imad", String(G));
-            google.c.e("load", "aftp", String(Math.round(L))); var d = google.timers.load;
-            a = d.m; if (!a || !a.prs) { var e = h() ? 0 : x("qsubts");
-              0 < e && (a = x("fbts"), 0 < a && (d.t.start = Math.max(e, a))); var f = d.t,
+            google.c.e("load", "aftp", String(Math.round(L)));
+            var d = google.timers.load;
+            a = d.m;
+            if (!a || !a.prs) {
+              var e = h() ? 0 : x("qsubts");
+              0 < e && (a = x("fbts"), 0 < a && (d.t.start = Math.max(e, a)));
+              var f = d.t,
                 l = f.start;
-              a = { wsrt: d.wsrt }; for (var m = 0, k; k = w[m++];) { var p = f[k];
-                p && l && (a[k] = p - l) } 0 < e && (a.gsasrt = d.t.start - e);
+              a = { wsrt: d.wsrt };
+              for (var m = 0, k; k = w[m++];) {
+                var p = f[k];
+                p && l && (a[k] = p - l)
+              }
+              0 < e && (a.gsasrt = d.t.start - e);
               e = d.e;
               d = "/gen_204?s=" + google.sn + "&t=aft&atyp=csi&ei=" + google.kEI + "&rt=";
-              f = ""; for (g in a) d += "" + f + g + "." + a[g], f = ","; for (var q in e) d += "&" + q + "=" + e[q];
+              f = "";
+              for (g in a) d += "" + f + g + "." + a[g], f = ",";
+              for (var q in e) d += "&" + q + "=" + e[q];
               window._cshid && (d += "&cshid=" + window._cshid);
               2 === h() && (d += "&bb=1");
-              1 === h() && (d += "&r=1"); if ("gsasrt" in a) { var g = x("qsd");
-                0 < g && (d += "&qsd=" + g) } google.kBL && (d += "&bl=" + google.kBL);
+              1 === h() && (d += "&r=1");
+              if ("gsasrt" in a) {
+                var g = x("qsd");
+                0 < g && (d += "&qsd=" + g)
+              }
+              google.kBL && (d += "&bl=" + google.kBL);
               g = d;
-              navigator.sendBeacon ? navigator.sendBeacon(g, "") : google.log("", "", g) } }
+              navigator.sendBeacon ? navigator.sendBeacon(g, "") : google.log("", "", g)
+            }
+          }
           if (null !== google.aftq && (g = 2 === google.fevent || 3 === google.fevent ? google.fevent : 1, 2 === g && c || 1 === g && b || 3 === g && (b || c))) {
             google.tick("load", "aftqf", Date.now());
             var B;
@@ -189,26 +282,44 @@
       }
       var Q = "src bsrc url ll image img-url".split(" ");
 
-      function S(a) { for (var c = 0, b; b = Q[c++];)
-          if (a.getAttribute("data-" + b)) return !0; return !1 }
+      function S(a) {
+        for (var c = 0, b; b = Q[c++];)
+          if (a.getAttribute("data-" + b)) return !0;
+        return !1
+      }
 
       function T(a, c) { 0 === c || c & 8 || (a.setAttribute("data-frt", "1"), ++C) } google.c.b("il");
-      google.c.setup = function(a, c, b) { var d = a.getAttribute("data-atf"); if (d) return b = Number(d), c && !a.hasAttribute("data-frt") && T(a, b), b; var e = "string" !== typeof a.src || !a.src,
+      google.c.setup = function(a, c, b) {
+        var d = a.getAttribute("data-atf");
+        if (d) return b = Number(d), c && !a.hasAttribute("data-frt") && T(a, b), b;
+        var e = "string" !== typeof a.src || !a.src,
           f = !!a.getAttribute("data-bsrc");
-        d = !!a.getAttribute("data-deferred"); var l = !d && S(a);
-        l && a.setAttribute("data-lzy_", "1"); var m = n(a);
-        a.setAttribute("data-atf", String(m)); var k = !!(m & 1);
+        d = !!a.getAttribute("data-deferred");
+        var l = !d && S(a);
+        l && a.setAttribute("data-lzy_", "1");
+        var m = n(a);
+        a.setAttribute("data-atf", String(m));
+        var k = !!(m & 1);
         e = (e || a.complete) && !d && !f && !(google.c.ll && k && l);
-        f = !google.c.lhc && Number(a.getAttribute("data-iml")) || 0;++z; if (e && !f || a.hasAttribute("data-noaft")) a.setAttribute("data-frt", "0"), ++A;
-        else { var p = google.c.btfi && m & 4 && f && L < y; if (p) { var q = a.getBoundingClientRect().top + window.pageYOffset;!b || q < b ? L = k ? y : q : p = !1 } k && (++E, d && ++G, l || ++H);
+        f = !google.c.lhc && Number(a.getAttribute("data-iml")) || 0;
+        ++z;
+        if (e && !f || a.hasAttribute("data-noaft")) a.setAttribute("data-frt", "0"), ++A;
+        else {
+          var p = google.c.btfi && m & 4 && f && L < y;
+          if (p) { var q = a.getBoundingClientRect().top + window.pageYOffset;!b || q < b ? L = k ? y : q : p = !1 } k && (++E, d && ++G, l || ++H);
           c && T(a, m);
           p && M("aft", f, !1, !0);
-          e && f ? N(a, k, l, google.c.btfi ? 0 : f) : (k && (!b || b >= y) && (L = y), google.rll(a, !0, function() { N(a, k, l, Date.now()) })) } return m };
-      google.c.ubr = function(a, c, b) { 0 > L && (b && (L = b), google.c.btfi && M("aft", c));
+          e && f ? N(a, k, l, google.c.btfi ? 0 : f) : (k && (!b || b >= y) && (L = y), google.rll(a, !0, function() { N(a, k, l, Date.now()) }))
+        }
+        return m
+      };
+      google.c.ubr = function(a, c, b) {
+        0 > L && (b && (L = b), google.c.btfi && M("aft", c));
         a || M("afts", c, !0);
         M("aft", c, !0);
         J && !google.c.frt && (J = !1, O());
-        a && K && (M("prt", c), google.c.timl && M("iml", c, !0), K = !1, P(), google.c.setup = function() { return 0 }, google.c.ubr = function() {}) };
+        a && K && (M("prt", c), google.c.timl && M("iml", c, !0), K = !1, P(), google.c.setup = function() { return 0 }, google.c.ubr = function() {})
+      };
     }).call(this);
     (function() {
       var b = [function() { google.tick && google.tick("load", "dcl") }];
@@ -229,28 +340,40 @@
       var E = function(a, b) { return function(d) { d || (d = window.event); return b.call(a, d) } },
         F = "undefined" != typeof navigator && /Macintosh/.test(navigator.userAgent),
         I = function() { this._mouseEventsPrevented = !0 };
-      var J = function(a) { this.g = a;
-          this.h = [] },
-        K = function(a) { for (var b = 0; b < a.h.length; ++b) { var d = a.g,
+      var J = function(a) {
+          this.g = a;
+          this.h = []
+        },
+        K = function(a) {
+          for (var b = 0; b < a.h.length; ++b) {
+            var d = a.g,
               c = a.h[b];
-            d.removeEventListener ? d.removeEventListener(c.eventType, c.i, c.capture) : d.detachEvent && d.detachEvent("on" + c.eventType, c.i) } a.h = [] };
+            d.removeEventListener ? d.removeEventListener(c.eventType, c.i, c.capture) : d.detachEvent && d.detachEvent("on" + c.eventType, c.i)
+          }
+          a.h = []
+        };
       var L = f._jsa || {};
       L._cfc = void 0;
       L._aeh = void 0;
-      var N = function() { this.s = [];
+      var N = function() {
+          this.s = [];
           this.g = [];
           this.h = [];
           this.o = {};
           this.j = null;
           this.l = [];
-          M(this, "_custom") },
+          M(this, "_custom")
+        },
         P = function(a) { return String.prototype.trim ? a.trim() : a.replace(/^\s+/, "").replace(/\s+$/, "") },
         da = function(a, b) {
           return function l(c, e) {
             e = void 0 === e ? !0 : e;
             var k = b;
-            if ("_custom" == k) { k = c.detail; if (!k || !k._type) return;
-              k = k._type }
+            if ("_custom" == k) {
+              k = c.detail;
+              if (!k || !k._type) return;
+              k = k._type
+            }
             var m = k;
             "click" == m && (F && c.metaKey || !F && c.ctrlKey || 2 == c.which || null == c.which && 4 == c.button || c.shiftKey) ? m = "clickmod" : "keydown" == m && !c.a11ysc && (m = "maybe_click");
             var x = c.srcElement || c.target;
@@ -266,11 +389,21 @@
                 var y = R(C, "jsaction");
                 if (y) {
                   p = g[y];
-                  if (!p) { p = {}; for (var D = y.split(aa), G = D ? D.length : 0, v = 0; v < G; v++) { var q = D[v]; if (q) { var w = q.indexOf(":"),
+                  if (!p) {
+                    p = {};
+                    for (var D = y.split(aa), G = D ? D.length : 0, v = 0; v < G; v++) {
+                      var q = D[v];
+                      if (q) {
+                        var w = q.indexOf(":"),
                           O = -1 != w,
                           z = O ? P(q.substr(0, w)) : ba;
                         q = O ? P(q.substr(w + 1)) : q;
-                        p[z] = q } } g[y] = p } y = p;
+                        p[z] = q
+                      }
+                    }
+                    g[y] = p
+                  }
+                  y = p;
                   p = {};
                   for (t in y) {
                     D = p;
@@ -296,51 +429,96 @@
             }
             n && (k = Q(n.eventType, n.event || c, x, n.action || "", h, k.timeStamp));
             k && "touchend" == k.eventType && (k.event._preventMouseEvents = I);
-            if (n && n.action) { if ("mouseenter" == m || "mouseleave" == m)
+            if (n && n.action) {
+              if ("mouseenter" == m || "mouseleave" == m)
                 if (x = c.relatedTarget, !("mouseover" == c.type && "mouseenter" == m || "mouseout" == c.type && "mouseleave" == m) || x && (x === h || A(h, x))) k.action = "", k.actionElement = null;
-                else { m = {}; for (var u in c) "function" !== typeof c[u] && "srcElement" !== u && "target" !== u && (m[u] = c[u]);
+                else {
+                  m = {};
+                  for (var u in c) "function" !== typeof c[u] && "srcElement" !== u && "target" !== u && (m[u] = c[u]);
                   m.type = "mouseover" == c.type ? "mouseenter" : "mouseleave";
                   m.target = m.srcElement = h;
                   m.bubbles = !1;
                   k.event = m;
-                  k.targetElement = h } } else k.action = "", k.actionElement = null;
+                  k.targetElement = h
+                }
+            } else k.action = "", k.actionElement = null;
             h = k;
             a.j && !h.event.a11ysgd && (u = Q(h.eventType, h.event, h.targetElement, h.action, h.actionElement, h.timeStamp), "clickonly" ==
               u.eventType && (u.eventType = "click"), a.j(u, !0));
-            if (h.actionElement || "maybe_click" == h.eventType) { if (a.j) { if (!h.actionElement || "A" != h.actionElement.tagName || "click" != h.eventType && "clickmod" != h.eventType || (c.preventDefault ? c.preventDefault() : c.returnValue = !1), (c = a.j(h)) && e) { l.call(this, c, !1); return } } else { if ((e = f.document) && !e.createEvent && e.createEventObject) try { var H = e.createEventObject(c) } catch (ha) { H = c } else H = c;
+            if (h.actionElement || "maybe_click" == h.eventType) {
+              if (a.j) { if (!h.actionElement || "A" != h.actionElement.tagName || "click" != h.eventType && "clickmod" != h.eventType || (c.preventDefault ? c.preventDefault() : c.returnValue = !1), (c = a.j(h)) && e) { l.call(this, c, !1); return } } else {
+                if ((e = f.document) && !e.createEvent && e.createEventObject) try { var H = e.createEventObject(c) } catch (ha) { H = c } else H = c;
                 h.event = H;
-                a.l.push(h) } L._aeh && L._aeh(h) }
+                a.l.push(h)
+              }
+              L._aeh && L._aeh(h)
+            }
           }
         },
         Q = function(a, b, d, c, e, l) { return { eventType: a, event: b, targetElement: d, action: c, actionElement: e, timeStamp: l || Date.now() } },
         R = function(a, b) { var d = null; "getAttribute" in a && (d = a.getAttribute(b)); return d },
-        ea = function(a, b) { return function(d) { var c = a,
+        ea = function(a, b) {
+          return function(d) {
+            var c = a,
               e = b,
-              l = !1; "mouseenter" == c ? c = "mouseover" : "mouseleave" == c && (c = "mouseout"); if (d.addEventListener) { if ("focus" == c || "blur" == c || "error" == c || "load" == c) l = !0;
-              d.addEventListener(c, e, l) } else d.attachEvent && ("focus" == c ? c = "focusin" : "blur" == c && (c = "focusout"), e = E(d, e), d.attachEvent("on" + c, e)); return { eventType: c, i: e, capture: l } } },
-        M = function(a, b) { if (!a.o.hasOwnProperty(b)) { var d = da(a, b),
+              l = !1;
+            "mouseenter" == c ? c = "mouseover" : "mouseleave" == c && (c = "mouseout");
+            if (d.addEventListener) {
+              if ("focus" == c || "blur" == c || "error" == c || "load" == c) l = !0;
+              d.addEventListener(c, e, l)
+            } else d.attachEvent && ("focus" == c ? c = "focusin" : "blur" == c && (c = "focusout"), e = E(d, e), d.attachEvent("on" + c, e));
+            return { eventType: c, i: e, capture: l }
+          }
+        },
+        M = function(a, b) {
+          if (!a.o.hasOwnProperty(b)) {
+            var d = da(a, b),
               c = ea(b, d);
             a.o[b] = d;
-            a.s.push(c); for (d = 0; d < a.g.length; ++d) { var e = a.g[d];
-              e.h.push(c.call(null, e.g)) } "click" == b && M(a, "keydown") } };
+            a.s.push(c);
+            for (d = 0; d < a.g.length; ++d) {
+              var e = a.g[d];
+              e.h.push(c.call(null, e.g))
+            }
+            "click" == b && M(a, "keydown")
+          }
+        };
       N.prototype.i = function(a) { return this.o[a] };
-      var V = function(a, b) { var d = new J(b);
-          a: { for (var c = 0; c < a.g.length; c++)
-              if (S(a.g[c].g, b)) { b = !0; break a } b = !1 }
+      var V = function(a, b) {
+          var d = new J(b);
+          a: {
+            for (var c = 0; c < a.g.length; c++)
+              if (S(a.g[c].g, b)) { b = !0; break a } b = !1
+          }
           if (b) return a.h.push(d), d;
           T(a, d);
           a.g.push(d);
-          U(a); return d },
-        U = function(a) { for (var b = a.h.concat(a.g), d = [], c = [], e = 0; e < a.g.length; ++e) { var l = a.g[e];
-            W(l, b) ? (d.push(l), K(l)) : c.push(l) } for (e = 0; e < a.h.length; ++e) l = a.h[e], W(l, b) ? d.push(l) : (c.push(l), T(a, l));
+          U(a);
+          return d
+        },
+        U = function(a) {
+          for (var b = a.h.concat(a.g), d = [], c = [], e = 0; e < a.g.length; ++e) {
+            var l = a.g[e];
+            W(l, b) ? (d.push(l), K(l)) : c.push(l)
+          }
+          for (e = 0; e < a.h.length; ++e) l = a.h[e], W(l, b) ? d.push(l) : (c.push(l), T(a, l));
           a.g = c;
-          a.h = d },
-        T = function(a, b) { var d = b.g;
-          fa && (d.style.cursor = "pointer"); for (d = 0; d < a.s.length; ++d) b.h.push(a.s[d].call(null, b.g)) },
-        X = function(a, b) { a.j = b;
-          a.l && (0 < a.l.length && b(a.l), a.l = null) },
-        W = function(a, b) { for (var d = 0; d < b.length; ++d)
-            if (b[d].g != a.g && S(b[d].g, a.g)) return !0; return !1 },
+          a.h = d
+        },
+        T = function(a, b) {
+          var d = b.g;
+          fa && (d.style.cursor = "pointer");
+          for (d = 0; d < a.s.length; ++d) b.h.push(a.s[d].call(null, b.g))
+        },
+        X = function(a, b) {
+          a.j = b;
+          a.l && (0 < a.l.length && b(a.l), a.l = null)
+        },
+        W = function(a, b) {
+          for (var d = 0; d < b.length; ++d)
+            if (b[d].g != a.g && S(b[d].g, a.g)) return !0;
+          return !1
+        },
         S = function(a, b) { for (; a != b && b.parentNode;) b = b.parentNode; return a == b },
         fa = "undefined" != typeof navigator && /iPhone|iPad|iPod/.test(navigator.userAgent),
         aa = /\s*;\s*/,
@@ -370,24 +548,43 @@
       M(Y, "touchend");
       M(Y, "touchcancel");
       M(Y, "paste");
-      (function(a) { google.jsad = function(b) { X(a, b) };
+      (function(a) {
+        google.jsad = function(b) { X(a, b) };
         google.jsaac = function(b) { return V(a, b) };
-        google.jsarc = function(b) { K(b); for (var d = !1, c = 0; c < a.g.length; ++c)
-            if (a.g[c] === b) { a.g.splice(c, 1);
-              d = !0; break } if (!d)
+        google.jsarc = function(b) {
+          K(b);
+          for (var d = !1, c = 0; c < a.g.length; ++c)
+            if (a.g[c] === b) {
+              a.g.splice(c, 1);
+              d = !0;
+              break
+            } if (!d)
             for (d = 0; d < a.h.length; ++d)
-              if (a.h[d] === b) { a.h.splice(d, 1); break } U(a) } })(Y);
-      f.gws_wizbind = (0, function(a) { return { trigger: function(b) { var d = a.i(b.type);
-            d || (M(a, b.type), d = a.i(b.type)); var c = b.target || b.srcElement;
-            d && d.call(c.ownerDocument.documentElement, b) }, bind: function(b) { X(a, b) } } })(Y);
+              if (a.h[d] === b) { a.h.splice(d, 1); break } U(a)
+        }
+      })(Y);
+      f.gws_wizbind = (0, function(a) {
+        return {
+          trigger: function(b) {
+            var d = a.i(b.type);
+            d || (M(a, b.type), d = a.i(b.type));
+            var c = b.target || b.srcElement;
+            d && d.call(c.ownerDocument.documentElement, b)
+          },
+          bind: function(b) { X(a, b) }
+        }
+      })(Y);
     }).call(this);
     (function() {
       google.ctpacw = {};
       google.ctpacw.cm = function(a) { a.ping && (a.href = a.ping, a.removeAttribute("ping")) };
     }).call(this);
     (function() { window.google.erd = { sp: 'srp', jsr: 0, bv: 1464, sd: true, de: true }; })();
-    var h = "function" == typeof Object.defineProperties ? Object.defineProperty : function(a, b, c) { if (a == Array.prototype || a == Object.prototype) return a;
-        a[b] = c.value; return a },
+    var h = "function" == typeof Object.defineProperties ? Object.defineProperty : function(a, b, c) {
+        if (a == Array.prototype || a == Object.prototype) return a;
+        a[b] = c.value;
+        return a
+      },
       k = function(a) { a = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global]; for (var b = 0; b < a.length; ++b) { var c = a[b]; if (c && c.Math == Math) return c } throw Error("a"); },
       l = k(this),
       m = function(a, b) {
@@ -402,16 +599,29 @@
           a = a[a.length - 1];d = c[a];b = b(d);b != d && null != b && h(c, a, { configurable: !0, writable: !0, value: b })
         }
       };
-    m("String.prototype.startsWith", function(a) { return a ? a : function(b, c) { if (null == this) throw new TypeError("The 'this' value for String.prototype.startsWith must not be null or undefined"); if (b instanceof RegExp) throw new TypeError("First argument to String.prototype.startsWith must not be a regular expression"); var d = this + "";
-        b += ""; var e = d.length,
+    m("String.prototype.startsWith", function(a) {
+      return a ? a : function(b, c) {
+        if (null == this) throw new TypeError("The 'this' value for String.prototype.startsWith must not be null or undefined");
+        if (b instanceof RegExp) throw new TypeError("First argument to String.prototype.startsWith must not be a regular expression");
+        var d = this + "";
+        b += "";
+        var e = d.length,
           g = b.length;
-        c = Math.max(0, Math.min(c | 0, d.length)); for (var f = 0; f < g && c < e;)
-          if (d[c++] != b[f++]) return !1; return f >= g } });
+        c = Math.max(0, Math.min(c | 0, d.length));
+        for (var f = 0; f < g && c < e;)
+          if (d[c++] != b[f++]) return !1;
+        return f >= g
+      }
+    });
     google.arwt = function(a) { a.href = document.getElementById(a.id.substring(a.id.startsWith("vcs") ? 3 : 1)).href; return !0 };
     (function() {
-      var d = function(a) { this.h = a = a.url; var b = /[?&]dsh=1(&|$)/.test(a);
+      var d = function(a) {
+          this.h = a = a.url;
+          var b = /[?&]dsh=1(&|$)/.test(a);
           this.j = !b && /[?&]ae=1(&|$)/.test(a);
-          this.l = !b && /[?&]ae=2(&|$)/.test(a); if ((this.g = /[?&]adurl=([^&]*)/.exec(a)) && this.g[1]) { try { var c = decodeURIComponent(this.g[1]) } catch (e) { c = null } this.i = c } },
+          this.l = !b && /[?&]ae=2(&|$)/.test(a);
+          if ((this.g = /[?&]adurl=([^&]*)/.exec(a)) && this.g[1]) { try { var c = decodeURIComponent(this.g[1]) } catch (e) { c = null } this.i = c }
+        },
         g = function(a, b) { return a.j && a.i || a.l ? 1 == b ? a.j ? a.i : f(a, "&dct=1") : 2 == b ? f(a, "&ri=2") : f(a, "&ri=16") : a.h },
         f = function(a, b) { return a.g ? a.h.slice(0, a.g.index) + b + a.h.slice(a.g.index) : a.h + b };
       var k = function(a, b) { this.g = b === h ? a : "" };
@@ -421,43 +631,72 @@
       var m = /^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i,
         h = {};
       var n = /^((market|itms|intent|itms-appss):\/\/)/i;
-      var p = function(a, b) { b instanceof k || b instanceof k || (b = "object" == typeof b && b.i ? b.h() : String(b), m.test(b) || (b = "about:invalid#zClosurez"), b = new k(b, h));
-        a.href = b instanceof k && b.constructor === k ? b.g : "type_error:SafeUrl" };
+      var p = function(a, b) {
+        b instanceof k || b instanceof k || (b = "object" == typeof b && b.i ? b.h() : String(b), m.test(b) || (b = "about:invalid#zClosurez"), b = new k(b, h));
+        a.href = b instanceof k && b.constructor === k ? b.g : "type_error:SafeUrl"
+      };
 
       function q(a) { var b = /[?&]adurl=/.exec(a); return b ? "" + a.slice(0, b.index + 1) + "nis=3&" + a.slice(b.index + 1) : "" + a + (-1 === a.indexOf("?") ? "?" : "&") + "nis=3" }
 
-      function r(a) { if (document.featurePolicy) { if ("86" === a.getAttribute("data-ans")) { if (!(a.hasAttribute("impressiondata") && a.hasAttribute("conversiondestination") && a.hasAttribute("reportingorigin") && a.hasAttribute("impressionexpiry") && document.featurePolicy.allowsFeature("conversion-measurement"))) return } else if (!(a.hasAttribute("attributionsourceeventid") && a.hasAttribute("attributiondestination") && a.hasAttribute("attributionreportto") && a.hasAttribute("attributionexpiry") && document.featurePolicy.allowsFeature("attribution-reporting"))) return; var b = a.href,
+      function r(a) {
+        if (document.featurePolicy) {
+          if ("86" === a.getAttribute("data-ans")) { if (!(a.hasAttribute("impressiondata") && a.hasAttribute("conversiondestination") && a.hasAttribute("reportingorigin") && a.hasAttribute("impressionexpiry") && document.featurePolicy.allowsFeature("conversion-measurement"))) return } else if (!(a.hasAttribute("attributionsourceeventid") && a.hasAttribute("attributiondestination") && a.hasAttribute("attributionreportto") && a.hasAttribute("attributionexpiry") && document.featurePolicy.allowsFeature("attribution-reporting"))) return;
+          var b = a.href,
             c = /[?&]nis=([^&]*)/.exec(b);
-          c && "3" === c[1] || (b = c ? b.replace(/([?&])nis=([^&]*)/, function(e, l) { return l + "nis=3" }) : q(b), p(a, b)) } };
-      google.ausb = function(a) { if (!a) return google.ml(Error("a"), !1), !0; if (a.hasAttribute("data-impdclcc")) try { r(a) } catch (l) {}
-        if (a.getAttribute("data-sbv2")) { if (a.hasAttribute("data-ohref")) var b = a.getAttribute("data-ohref");
-          else b = a.href, a.setAttribute("data-ohref", b); var c = b; var e = new d({ url: c });
+          c && "3" === c[1] || (b = c ? b.replace(/([?&])nis=([^&]*)/, function(e, l) { return l + "nis=3" }) : q(b), p(a, b))
+        }
+      };
+      google.ausb = function(a) {
+        if (!a) return google.ml(Error("a"), !1), !0;
+        if (a.hasAttribute("data-impdclcc")) try { r(a) } catch (l) {}
+        if (a.getAttribute("data-sbv2")) {
+          if (a.hasAttribute("data-ohref")) var b = a.getAttribute("data-ohref");
+          else b = a.href, a.setAttribute("data-ohref", b);
+          var c = b;
+          var e = new d({ url: c });
           c = e.j && e.i || e.l ? navigator.sendBeacon ? navigator.sendBeacon(f(e, "&act=1&ri=1"), "") ? g(e, 1) : g(e, 2) : g(e, 0) : c;
           c = c instanceof k || !n.test(c) ? c : new k(c, h);
-          b != c && p(a, c) } return !0 };
+          b != c && p(a, c)
+        }
+        return !0
+      };
     }).call(this);
     (function() {
-      function c(a) { for (; a && a != document.documentElement; a = a.parentElement)
-          if ("A" == a.tagName) return a; return null }
+      function c(a) {
+        for (; a && a != document.documentElement; a = a.parentElement)
+          if ("A" == a.tagName) return a;
+        return null
+      }
 
-      function d(a) { if (a = c(a.target)) switch (a.getAttribute("data-agdh")) {
+      function d(a) {
+        if (a = c(a.target)) switch (a.getAttribute("data-agdh")) {
           case "arwt":
-            google.arwt(a); break;
+            google.arwt(a);
+            break;
           case "fvd3vc":
-            window.J4LCUe(a); break;
+            window.J4LCUe(a);
+            break;
           case "EdKoMd":
-            (0, google.f.LmvwCb)(a) }
-        return !0 };
+            (0, google.f.LmvwCb)(a)
+        }
+        return !0
+      };
       window.document.documentElement.addEventListener("mousedown", d, !0);
       window.document.documentElement.addEventListener("touchstart", d, !0);
-      window.document.documentElement.addEventListener("click", function(a) { var b = c(a.target); if (b) switch (b.getAttribute("data-agch")) {
+      window.document.documentElement.addEventListener("click", function(a) {
+        var b = c(a.target);
+        if (b) switch (b.getAttribute("data-agch")) {
           case "ausb":
-            google.ausb(b); break;
+            google.ausb(b);
+            break;
           case "HJ3bqe":
-            window.YvikHb(a, b); break;
+            window.YvikHb(a, b);
+            break;
           case "cqUJI":
-            (0, google.f.DfwaCb)(b) }
-        return !0 }, !0);
+            (0, google.f.DfwaCb)(b)
+        }
+        return !0
+      }, !0);
     }).call(this);
   </script>
   <style>
@@ -2228,11 +2467,18 @@
         var f;
         a: { var h = (this || self).navigator; if (h) { var k = h.userAgent; if (k) { f = k; break a } } f = "" };
 
-        function l(c, a) { var g = location.hash; if (0 <= f.indexOf("CriOS/46.0.2490.73")) return !1; var d = "aie|sie|dobs|ip|refq|sie",
+        function l(c, a) {
+          var g = location.hash;
+          if (0 <= f.indexOf("CriOS/46.0.2490.73")) return !1;
+          var d = "aie|sie|dobs|ip|refq|sie",
             b = /^[^0]/;
           b = { fpstate: /./, trex: /./, istate: b, spd: b, pie: b, imgrc: /^[^_]/, flt: /;e:1/, view: /./, oshop: /./ };
-          c = { sie: !c.match(/(^|;)sie($|;)/), pie: !a }; for (var e in b) d += "|" + e; for (d = new RegExp("[#&](" + d + ")=([^&]*)", "g"); e = d.exec(g);)
-            if (a = e[1], !c[a] && (a = b[a], !a || a.exec(e[2]))) return !0; return !1 };
+          c = { sie: !c.match(/(^|;)sie($|;)/), pie: !a };
+          for (var e in b) d += "|" + e;
+          for (d = new RegExp("[#&](" + d + ")=([^&]*)", "g"); e = d.exec(g);)
+            if (a = e[1], !c[a] && (a = b[a], !a || a.exec(e[2]))) return !0;
+          return !1
+        };
         (function(c, a, g, d) { var b = !(!window.agsa_ext || !window.sessionStorage.getItem("isn::isn")); if (b || l(a, g)) document.body.style.opacity = String(d), b && window.setTimeout(function() { document.body.style.opacity && (document.body.style.opacity = "", google.log("qwd", "&t=" + c)) }, c) })(wt, eie, sir, hop);
       }).call(this);
     })();
@@ -2343,8 +2589,10 @@
     (function() {
       var l = '400,500';
       var font = 'Google Sans';
-      (function() { if (document.fonts && document.fonts.load)
-          for (var d = l.split(","), b = {}, c = 0, a = void 0; a = d[c]; ++c) b[a] || (b[a] = !0, document.fonts.load(a + " 10pt " + font).catch(function() {})) })();
+      (function() {
+        if (document.fonts && document.fonts.load)
+          for (var d = l.split(","), b = {}, c = 0, a = void 0; a = d[c]; ++c) b[a] || (b[a] = !0, document.fonts.load(a + " 10pt " + font).catch(function() {}))
+      })();
     })();
   </script>
   <header class="Fh5muf">
@@ -2587,8 +2835,12 @@
           </div>
           <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
             (function() {
-              var a = Array.prototype.indexOf ? function(b, c) { return Array.prototype.indexOf.call(b, c, void 0) } : function(b, c) { if ("string" === typeof b) return "string" !== typeof c || 1 != c.length ? -1 : b.indexOf(c, 0); for (var d = 0; d < b.length; d++)
-                  if (d in b && b[d] === c) return d; return -1 };
+              var a = Array.prototype.indexOf ? function(b, c) { return Array.prototype.indexOf.call(b, c, void 0) } : function(b, c) {
+                if ("string" === typeof b) return "string" !== typeof c || 1 != c.length ? -1 : b.indexOf(c, 0);
+                for (var d = 0; d < b.length; d++)
+                  if (d in b && b[d] === c) return d;
+                return -1
+              };
               var f = function() { var b = e; return "string" == typeof b.className ? b.className : b.getAttribute && b.getAttribute("class") || "" };
               var e = document.getElementById("hdtb-msb"),
                 g = document.getElementById("hdtb-msb-b");
@@ -2601,9 +2853,11 @@
                     else {
                       var r;
                       if (e.classList) r = e.classList.contains("LxrIDb");
-                      else { var t;
+                      else {
+                        var t;
                         t = e.classList ? e.classList : f().match(/\S+/g) || [];
-                        r = 0 <= a(t, "LxrIDb") }
+                        r = 0 <= a(t, "LxrIDb")
+                      }
                       if (!r) {
                         var u = f(),
                           v = u + (0 < u.length ? " LxrIDb" : "LxrIDb");
@@ -3017,10 +3271,16 @@
                   (function() {
                     var a = uer,
                       b = Date.now();
-                    if (google.timers && google.timers.load.t) { var c = window.innerHeight || document.documentElement.clientHeight,
-                        d = 0; if (eid) { var e = document.getElementById(eid);
-                        e && (d = Math.floor(e.getBoundingClientRect().top + window.pageYOffset)) } for (var f = d >= c, g = document.getElementsByTagName("img"), h = 0, k = void 0; k = g[h++];) google.c.setup(k, !1, d);
-                      a && f && google.c.ubr(!1, b, d) };
+                    if (google.timers && google.timers.load.t) {
+                      var c = window.innerHeight || document.documentElement.clientHeight,
+                        d = 0;
+                      if (eid) {
+                        var e = document.getElementById(eid);
+                        e && (d = Math.floor(e.getBoundingClientRect().top + window.pageYOffset))
+                      }
+                      for (var f = d >= c, g = document.getElementsByTagName("img"), h = 0, k = void 0; k = g[h++];) google.c.setup(k, !1, d);
+                      a && f && google.c.ubr(!1, b, d)
+                    };
                   }).call(this);
                 })();
               </script>
@@ -4918,13 +5178,21 @@
   </div><textarea class="csi" name="csi" style="display:none"></textarea>
   <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
     (function() {
-      (function() { var c = Date.now(); if (google.timers && google.timers.load.t) { for (var a = document.getElementsByTagName("img"), d = 0, b = void 0; b = a[d++];) google.c.setup(b, !1, void 0);
-          google.c.frt = !1; "hidden" === document.visibilityState && google.c.e("load", "hddn", "1");
+      (function() {
+        var c = Date.now();
+        if (google.timers && google.timers.load.t) {
+          for (var a = document.getElementsByTagName("img"), d = 0, b = void 0; b = a[d++];) google.c.setup(b, !1, void 0);
+          google.c.frt = !1;
+          "hidden" === document.visibilityState && google.c.e("load", "hddn", "1");
           google.c.e("load", "imn", String(a.length));
           google.c.ubr(!0, c);
           google.c.glu && google.c.glu();
-          google.rll(window, !1, function() { google.tick("load", "ol");
-            google.c.u("pr") }) } })();
+          google.rll(window, !1, function() {
+            google.tick("load", "ol");
+            google.c.u("pr")
+          })
+        }
+      })();
     }).call(this);
   </script>
   <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
@@ -6948,12 +7216,18 @@
     })();
     google.x(null, function() {
       (function() {
-        (function() { google.csct = {};
-          google.csct.ps = 'AOvVaw1Eqy6hKJfXTtjtDomgiZKG\x26ust\x3d1635332402408835'; })(); })();
+        (function() {
+          google.csct = {};
+          google.csct.ps = 'AOvVaw1Eqy6hKJfXTtjtDomgiZKG\x26ust\x3d1635332402408835';
+        })();
+      })();
       (function() {
-        (function() { google.csct.pi = true; })(); })();
-      (function() { window.jsl = window.jsl || {};
-        window.jsl.dh = window.jsl.dh || function(i, c, d) { try { var e = document.getElementById(i); if (e) { e.innerHTML = c; if (d) { d(); } } else { if (window.jsl.el) { window.jsl.el(new Error('Missing ID.'), { 'id': i }); } } } catch (e) { if (window.jsl.el) { window.jsl.el(new Error('jsl.dh')); } } }; })();
+        (function() { google.csct.pi = true; })();
+      })();
+      (function() {
+        window.jsl = window.jsl || {};
+        window.jsl.dh = window.jsl.dh || function(i, c, d) { try { var e = document.getElementById(i); if (e) { e.innerHTML = c; if (d) { d(); } } else { if (window.jsl.el) { window.jsl.el(new Error('Missing ID.'), { 'id': i }); } } } catch (e) { if (window.jsl.el) { window.jsl.el(new Error('jsl.dh')); } } };
+      })();
       (function() { window.jsl.dh('emdozc', '\x3ca class\x3d\x22Is2Q0d\x22 href\x3d\x22#\x22 aria-label\x3d\x22Close the drawer\x22 role\x3d\x22menuitem\x22 jsaction\x3d\x22Kcbrbe\x22 data-ved\x3d\x220ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQnJcCCAU\x22\x3e\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22/?hl\x3den-PK\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQnZcCCAY\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/home_icon.svg\x22 alt\x3d\x22\x22\x3eHome\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22https://myactivity.google.com/product/search?utm_source\x3dgoogle\x26amp;hl\x3den-PK\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsLsECAc\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/search_activity_icon.svg\x22 alt\x3d\x22\x22\x3eSearch history\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22/save?hl\x3den-PK\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQnpcCCAg\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/save_icon.svg\x22 alt\x3d\x22\x22\x3eCollections\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22/search/managesearches?sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ34oDCAk\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/manage_searches_icon.svg\x22 alt\x3d\x22\x22\x3eOffline searches\x3c/a\x3e\x3cdiv class\x3d\x22qlCFie\x22 aria-hidden\x3d\x22true\x22\x3e\x3c/div\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22/preferences?hl\x3den-PK\x26amp;prev\x3dhttps://www.google.com/search?q%3Ddiagnosis%2Bis%2Bclinical%2Bdefinition%26oq%3Ddiagnosis%2Bis%2Bcl%26aqs%3Dchrome.2.69i57j0i22i30l4.10085j0j9%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQn5cCCAo\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/settings_icon.svg\x22 alt\x3d\x22\x22\x3eSettings\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22https://myactivity.google.com/privacyadvisor/search?utm_source\x3dgooglemenu\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQp9gDCAs\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/privacy_advisor_icon.svg\x22 alt\x3d\x22\x22\x3eYour data in Search\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22/safesearch?hl\x3den-PK\x26amp;prev\x3dhttps://www.google.com/search?q%3Ddiagnosis%2Bis%2Bclinical%2Bdefinition%26oq%3Ddiagnosis%2Bis%2Bcl%26aqs%3Dchrome.2.69i57j0i22i30l4.10085j0j9%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\x26amp;sa\x3dX\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQkqkxCAw\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/explicit_icon.svg\x22 alt\x3d\x22\x22\x3eHide explicit results: off\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22https://google.com/search/howsearchworks/\x22 role\x3d\x22menuitem\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/how_search_works_icon.svg\x22 alt\x3d\x22\x22\x3eHow Search works\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22https://support.google.com/websearch/?p\x3dws_results_help\x26amp;hl\x3den-PK\x22 role\x3d\x22menuitem\x22 ping\x3d\x22/url?sa\x3dt\x26amp;source\x3dweb\x26amp;rct\x3dj\x26amp;url\x3dhttps://support.google.com/websearch/%3Fp%3Dws_results_help%26hl%3Den-PK\x26amp;ved\x3d0ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQoJcCCA0\x26amp;usg\x3dAOvVaw2iSb7dm7zpYJ9Otqz9pfcb\x22 oncontextmenu\x3d\x22google.ctpacw.cm(this)\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/help_icon.svg\x22 alt\x3d\x22\x22\x3eHelp\x3c/a\x3e\x3ca class\x3d\x22rYDfvb\x22 href\x3d\x22#\x22 role\x3d\x22menuitem\x22 target\x3d\x22_blank\x22 jsaction\x3d\x22feqbab\x22 data-ved\x3d\x220ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQrsICCA4\x22\x3e\x3cimg class\x3d\x22EuAkLc\x22 src\x3d\x22https://www.gstatic.com/navigationdrawer/feedback_icon.svg\x22 alt\x3d\x22\x22\x3eSend feedback\x3c/a\x3e'); })();
       (function() { window.jsl.dh('hdtbMenus', '\x3cspan jscontroller\x3d\x22nabPbb\x22 jsaction\x3d\x22KyPa0e:Y0y4c;BVfjhf:VFzweb\x22\x3e\x3cg-popup jsname\x3d\x22V68bde\x22 jscontroller\x3d\x22DPreE\x22 jsaction\x3d\x22A05xBd:IYtByb;EOZ57e:WFrRFb;\x22 jsdata\x3d\x22mVjAjf;_;AAHUj0\x22\x3e\x3cdiv jsname\x3d\x22oYxtQd\x22 class\x3d\x22rIbAWc\x22 aria-expanded\x3d\x22false\x22 aria-haspopup\x3d\x22true\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22WFrRFb;keydown:uYT2Vb\x22\x3e\x3cdiv class\x3d\x22hdtb-mn-hd Yg3U7e\x22\x3e\x3cdiv class\x3d\x22KTBKoe\x22\x3eAny time\x3c/div\x3e\x3cspan class\x3d\x22gTl8xb\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22V68bde\x22 class\x3d\x22EwsJzb sAKBe B8Kd8d\x22 style\x3d\x22display:none;z-index:200\x22\x3e\x3cg-menu jsname\x3d\x22xl07Ob\x22 class\x3d\x22cF4V5c PVU5bf Tlae9d gLSAk rShyOb\x22 jscontroller\x3d\x22WlNQGd\x22 data-mh\x3d\x22-1\x22 role\x3d\x22menu\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22focus:h06R8;PSl28c;keydown:uYT2Vb;mouseenter:WOQqYb;mouseleave:Tx5Rb;mouseover:IgJl9c;rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22PKdGSc\x22 class\x3d\x22elBmqd\x22 aria-hidden\x3d\x22true\x22 style\x3d\x22display:none\x22\x3e\x3cspan jsname\x3d\x22gX0Ncd\x22 class\x3d\x22SeTgif z1asCe IW3j9\x22 jsaction\x3d\x22CvxHYc\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3cspan jsname\x3d\x22llger\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 class\x3d\x22nvELY ErsxPb\x22 jscontroller\x3d\x22CnSW2d\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUj4\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cg-ripple jscontroller\x3d\x22KbYvUc\x22 class\x3d\x22a8L5ad\x22 jsdata\x3d\x22SMQQFe;_;AAHUkA\x22 jsaction\x3d\x22yYNR0b;rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22AHe6Kc\x22 class\x3d\x22fPpFvc\x22\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22yA8yjc\x22 class\x3d\x22bFcYAe\x22\x3e\x3c/div\x3e\x3c/g-ripple\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22\x3e\x3cdiv class\x3d\x22y0fQ9c\x22\x3eAny time\x3c/div\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+clinical+definition\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dqdr:h\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEA0\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3ePast hour\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+clinical+definition\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dqdr:d\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEA4\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3ePast 24 hours\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+clinical+definition\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dqdr:w\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEA8\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3ePast week\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+clinical+definition\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dqdr:m\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEBA\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3ePast month\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+clinical+definition\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dqdr:y\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEBE\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3ePast year\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3c/g-menu\x3e\x3c/div\x3e\x3c/g-popup\x3e\x3c/span\x3e\x3cspan jscontroller\x3d\x22nabPbb\x22 jsaction\x3d\x22KyPa0e:Y0y4c;BVfjhf:VFzweb\x22\x3e\x3cg-popup jsname\x3d\x22V68bde\x22 jscontroller\x3d\x22DPreE\x22 jsaction\x3d\x22A05xBd:IYtByb;EOZ57e:WFrRFb;\x22 jsdata\x3d\x22mVjAjf;_;AAHUj0\x22\x3e\x3cdiv jsname\x3d\x22oYxtQd\x22 class\x3d\x22rIbAWc\x22 aria-expanded\x3d\x22false\x22 aria-haspopup\x3d\x22true\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22WFrRFb;keydown:uYT2Vb\x22\x3e\x3cdiv class\x3d\x22hdtb-mn-hd\x22\x3e\x3cdiv class\x3d\x22KTBKoe\x22\x3eAll results\x3c/div\x3e\x3cspan class\x3d\x22gTl8xb\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22V68bde\x22 class\x3d\x22EwsJzb sAKBe B8Kd8d\x22 style\x3d\x22display:none;z-index:200\x22\x3e\x3cg-menu jsname\x3d\x22xl07Ob\x22 class\x3d\x22cF4V5c PVU5bf Tlae9d gLSAk rShyOb\x22 jscontroller\x3d\x22WlNQGd\x22 data-mh\x3d\x22-1\x22 role\x3d\x22menu\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22focus:h06R8;PSl28c;keydown:uYT2Vb;mouseenter:WOQqYb;mouseleave:Tx5Rb;mouseover:IgJl9c;rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22PKdGSc\x22 class\x3d\x22elBmqd\x22 aria-hidden\x3d\x22true\x22 style\x3d\x22display:none\x22\x3e\x3cspan jsname\x3d\x22gX0Ncd\x22 class\x3d\x22SeTgif z1asCe IW3j9\x22 jsaction\x3d\x22CvxHYc\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3cspan jsname\x3d\x22llger\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 class\x3d\x22nvELY ErsxPb\x22 jscontroller\x3d\x22CnSW2d\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUj4\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cg-ripple jscontroller\x3d\x22KbYvUc\x22 class\x3d\x22a8L5ad\x22 jsdata\x3d\x22SMQQFe;_;AAHUkA\x22 jsaction\x3d\x22yYNR0b;rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22AHe6Kc\x22 class\x3d\x22fPpFvc\x22\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22yA8yjc\x22 class\x3d\x22bFcYAe\x22\x3e\x3c/div\x3e\x3c/g-ripple\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22\x3e\x3cdiv class\x3d\x22y0fQ9c\x22\x3eAll results\x3c/div\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/search?q\x3ddiagnosis+is+cl\x26amp;prmd\x3dinsxv\x26amp;sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;source\x3dlnt\x26amp;tbs\x3dli:1\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQpwV6BAgCEBc\x22 role\x3d\x22menuitem\x22 tabindex\x3d\x22-1\x22\x3eVerbatim\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3c/g-menu\x3e\x3c/div\x3e\x3c/g-popup\x3e\x3c/span\x3e'); })();
       (function() { window.jsl.dh('_st93YYzxFYa_UuDalLgL29', '\x3cdiv class\x3d\x22xtcv7e v0rrvd\x22\x3e\x3cdiv id\x3d\x22st93YYzxFYa_UuDalLgL__42\x22\x3e\x3c/div\x3e\x3cdiv id\x3d\x22st93YYzxFYa_UuDalLgL__43\x22\x3e\x3c/div\x3e\x3c/div\x3e'); })();
@@ -6969,7 +7243,8 @@
       (function() { window.jsl.dh('tsuid4', '\x3cdiv jsname\x3d\x22sM5MNb\x22 aria-live\x3d\x22polite\x22 class\x3d\x22tYAdEe\x22 style\x3d\x22z-index:2000\x22\x3e\x3cdiv jsname\x3d\x22Ng57nc\x22 class\x3d\x22FEXCIb\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ4G96BAgCECE\x22\x3e\x3cdiv class\x3d\x22EA3l1b\x22\x3e\x3cdiv class\x3d\x22Xb004\x22 jsslot\x3d\x22\x22\x3e\x3cspan class\x3d\x22awHmMb wHYlTd yUTMj\x22\x3eCan\x27t update your location\x3c/span\x3e\x3cg-snackbar-action class\x3d\x22BDp8nf zJUuqf AB4Wff aepCxe\x22 jscontroller\x3d\x22xRxDld\x22 jsaction\x3d\x22GtUzrb\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQhbkIegQIAhAj\x22\x3e\x3cg-flat-button class\x3d\x22U8shWc r2fjmd hObAcc gTewb VDgVie hpZDWd fSXIc\x22 style\x3d\x22color:#4285f4\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22\x3e\x3cspan\x3eLearn more\x3c/span\x3e\x3c/g-flat-button\x3e\x3c/g-snackbar-action\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e'); })();
       (function() { window.jsl.dh('tsuid6', '\x3cdiv jsname\x3d\x22sM5MNb\x22 aria-live\x3d\x22polite\x22 class\x3d\x22tYAdEe\x22 style\x3d\x22z-index:2000\x22\x3e\x3cdiv jsname\x3d\x22Ng57nc\x22 class\x3d\x22FEXCIb\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ4G96BAgCECU\x22\x3e\x3cdiv class\x3d\x22EA3l1b\x22\x3e\x3cdiv class\x3d\x22Xb004\x22 jsslot\x3d\x22\x22\x3e\x3cspan class\x3d\x22awHmMb wHYlTd yUTMj\x22\x3eUpdating location\u2026\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e'); })();
       (function() { window.jsl.dh('_st93YYzxFYa_UuDalLgL8', '\x3cg-menu jsname\x3d\x22xl07Ob\x22 class\x3d\x22cF4V5c lA8P5e gLSAk rShyOb\x22 jscontroller\x3d\x22WlNQGd\x22 data-mh\x3d\x22-1\x22 role\x3d\x22menu\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22focus:h06R8;PSl28c;keydown:uYT2Vb;mouseenter:WOQqYb;mouseleave:Tx5Rb;mouseover:IgJl9c;rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22PKdGSc\x22 class\x3d\x22elBmqd\x22 aria-hidden\x3d\x22true\x22 style\x3d\x22display:none\x22\x3e\x3cspan jsname\x3d\x22gX0Ncd\x22 class\x3d\x22SeTgif z1asCe IW3j9\x22 jsaction\x3d\x22CvxHYc\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3cspan jsname\x3d\x22llger\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22https://www.google.com/preferences?hl\x3den-PK\x26amp;prev\x3dhttps://www.google.com/search?q%3Ddiagnosis%2Bis%2Bclinical%2Bdefinition%26oq%3Ddiagnosis%2Bis%2Bcl%26aqs%3Dchrome.2.69i57j0i22i30l4.10085j0j9%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\x26amp;fg\x3d1\x22 role\x3d\x22menuitem\x22\x3eSearch settings\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22/advanced_search?q\x3ddiagnosis+is+clinical+definition\x26amp;hl\x3den-PK\x26amp;fg\x3d1\x22 role\x3d\x22menuitem\x22\x3eAdvanced search\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22https://myactivity.google.com/privacyadvisor/search?utm_source\x3dgooglemenu\x26amp;fg\x3d1\x22 role\x3d\x22menuitem\x22\x3eYour data in Search\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3cg-menu-item jsname\x3d\x22NNJLud\x22 jscontroller\x3d\x22CnSW2d\x22 class\x3d\x22ErsxPb\x22 role\x3d\x22none\x22 data-short-label\x3d\x22\x22 jsdata\x3d\x22zPXzie;_;AAHUkE\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22\x3e\x3cdiv jsname\x3d\x22ibnC6b\x22 class\x3d\x22znKVS tnhqA\x22 role\x3d\x22none\x22\x3e\x3ca href\x3d\x22https://myactivity.google.com/product/search?utm_source\x3dgoogle\x26amp;hl\x3den-PK\x26amp;fg\x3d1\x22 role\x3d\x22menuitem\x22\x3eSearch history\x3c/a\x3e\x3c/div\x3e\x3c/g-menu-item\x3e\x3c/g-menu\x3e'); })();
-      (function() { google.drty && google.drty(undefined, true); })(); });
+      (function() { google.drty && google.drty(undefined, true); })();
+    });
   </script>
   <div></div>
   <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
@@ -6979,8 +7254,10 @@
       window.W_jd = window.W_jd || {};
       for (var b = 0; b < a.length; b += 2) window.W_jd[a[b]] = JSON.parse(a[b + 1]);
     })();
-    (function() { window.WIZ_global_data = { "QrtxK": "0", "SNlM0e": "AD7QlO5LRLpr6JXPxkeMZ87gW4Al:1635246002836", "S06Grb": "115595442544954790945", "GWsdKe": "en-PK", "w2btAe": "%.@.\"115595442544954790945\",\"115595442544954790945\",\"0\",null,1]", "zChJod": "%.@.]", "LVIXXb": "2", "Yllh3e": "%.@.1635246002358540,169123718,3070569824]", "eptZe": "/wizrpcui/_/WizRpcUi/" };
-      window.IJ_values = [true, true, false, false, false, "0 0 0 1px #ebedef", false, "0 0 0 1px #dadce0", false, "#000", "rgba(0,0,0,.54)", "rgba(0,0,0,.26)", "#fbbc04", "#4285f4", "#1a73e8", "#34a853", "#f8f9fa", "#70757a", "#1e8e3e", "#fff", "rgba(255,255,255,.30)", "#3c4043", "#d93025", "#f29900", false, "invert(1) hue-rotate(180deg)", "#b8bbbe", false, false, true, true, true, "#aecbfa", "#1a73e8", "0 0 0 1px #dadce0", true, true, 36, 20, 28, 6, true, false, false, false, true, "#3c4043", 10, true, true, false, "#f5f5f5", "rgba(0,0,0,.87)", false, "#fff", "0px 5px 26px 0px rgba(0, 0, 0, 0.22), 0px 20px 28px 0px rgba(0, 0, 0, 0.30)", "#4285f4", false, false, false, "#4285f4", true, true, 11, 16, 13, false, false, "#1a73e8", "#188038", "#fff", "#dadce0", "#70757a", "#202124", "20px", true, "#f1f3f4", "#202124", "#202124", "#f1f3f4", 14, "#202124", 40, "#202124", false, "#70757a", "#202124", "#ea4335", "#000", "", "Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "Roboto,Helvetica Neue,Arial,sans-serif", "#dadce0", "#000", "#dadce0", "#000", "#1a73e8", true, true, false, true, false, true, true, false, true, false, "0 2px 10px 0 rgba(0,0,0,0.2)", true, true, "rgba(0,0,0,.12)", "rgba(0,0,0,.26)", "#70757a", "#202124", "rgba(204,204,204,.15)", "rgba(204,204,204,.25)", "rgba(112,117,122,.20)", "rgba(112,117,122,.40)", "#4285f4", "#1558d6", "#34a853", "#ea4335", "#fbbc04", "#f8f9fa", "#f8f9fa", "#f8f9fa", "#70757a", "#202124", "#34a853", "rgba(0,0,0,.12)", "#323232", "#fff", "#fff", "rgba(255,255,255,.30)", "#fff", "#202124", "#fff", "Roboto,RobotoDraft,Helvetica,Arial,sans-serif", "14px", "500", "500", "pointer", "0 1px 1px rgba(0,0,0,.16)", false, "#000", "0 4px 16px rgba(0,0,0,0.2)", "#666", 200, true, true, false, false, true, true, false, true, 13, "#fff", "#FFF", true, "none", "0px 1px 4px 0px rgba(0,0,0,0.2)", "Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "#ddd", "none", "1px solid #dfe1e5", "rgba(0, 0, 0, 0.1)", "#dadce0", "#fff", "#1558d6", "#dfe1e5", "#202124", "#70757a", true, true, true, true, false, false, false, false, false, false, true, false, true, false, false, false, false, true, false, false, true, false, true, "8px", "#dfe1e5", true, false, false, "%.@.\"115595442544954790945\",\"115595442544954790945\",\"0\",null,1]", "0", "%.@.null,2,2.75,null,[null,768,393]]", "/WBdYPOUsqsVIO7G4Zguag\u003d\u003d", "%.@.\"#b8bbbe\"]", "%.@.0]", "%.@.2]", "%.@.\"0px 5px 26px 0px rgba(0,0,0,0.22),0px 20px 28px 0px rgba(0,0,0,0.3)\",\"#fff\"]", "%.@.1,null,null,36,28,6,0.3,null,12,null,null,null,null,null,\"#202124\",\"#70757a\",null,\"#202124\",null,null,null,null,null,null,\"#1a73e8\",\"#fabb05\",\"#fff\",\"#1a73e8\",\"#d1d1d1\",\"#fff\",null,1,null,14,500,\"#1558d6\",null,\"#1a73e8\",\"#eeeeee\"]", "%.@.\"#ebeced\",\"#fff\",\"#dadce0\",\"#fff\",\"#3c4043\",\"#dadce0\",\"#dadce0\",\"#bdc1c6\",\"#fff\",\"#3c4043\",\"#202124\",\"#3c4043\",\"#ea4335\",\"#34a853\",\"#202124\",\"#fff\",\"#fff\"]", "%.@.[],0,null,0,0]", "en-PK", "%.@.\"13px\",\"16px\",\"11px\"]", "en_PK", "%.@.\"0px\",0,\"8px\",8]", "%.@.\"14px\",14]", "%.@.40,32,14]", "%.@.\"Roboto-Bold,HelveticaNeue-Bold,HelveticaNeue,sans-serif-bold,Arial,sans-serif\"]", "%.@.\"0 2px 10px 0 rgba(0,0,0,0.2)\"]", "%.@.1,\"14px\",\"500\",\"500\",\"0 1px 1px rgba(0,0,0,.16)\",\"pointer\",\"#000\",\"rgba(0,0,0,.26)\",\"#70757a\",\"#202124\",\"rgba(204,204,204,.15)\",\"rgba(204,204,204,.25)\",\"rgba(112,117,122,.20)\",\"rgba(112,117,122,.40)\",\"#34a853\",\"#4285f4\",\"#1558d6\",\"#ea4335\",\"#fbbc04\",\"#f8f9fa\",\"#f8f9fa\",\"#202124\",\"#34a853\",\"rgba(0,0,0,.12)\",null,\"#fff\",\"rgba(255,255,255,.30)\",\"#fff\",\"#202124\",\"#fff\",1,0]", "%.@.\"20px\",\"500\",\"400\",\"14px\",\"16px\",\"16px\",\"Roboto,RobotoDraft,Helvetica,Arial,sans-serif\",\"24px\",\"400\",\"32px\",\"24px\"]", false, "", "%.@.\"#202124\",\"#3c4043\",\"#1a73e8\",null,\"#70757a\",\"#1558d6\",\"#4b11a8\",null,null,\"#fff\",\"#1a73e8\",\"#fff\",\"#e8f0fe\",\"#1558d6\",\"#f1f3f4\",\"#202124\",\"#fff\",\"#3c4043\",\"#202124\",\"#fff\",\"#fff\",\"#fff\",\"#188038\",\"#d93025\",\"#e37400\",\"#dfe1e5\",\"#f1f3f4\",\"rgba(32,33,36,0.6)\",\"#202124\",\"#dfe1e5\"]", "%.@.null,\"none\",null,\"0px 1px 3px rgba(60,64,67,0.08)\",null,\"0px 2px 6px rgba(60,64,67,0.16)\",null,\"0px 4px 12px rgba(60,64,67,0.24)\",null,null,\"1px solid  #dadce0\",\"none\",\"none\",\"none\"]", "%.@.\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"Roboto-Light,HelveticaNeue-Light,Helvetica Neue,sans-serif-light,Arial,sans-serif\"]", "%.@.\"16px\",\"12px\",\"0px\",\"8px\",\"4px\",\"2px\",\"20px\",\"24px\"]", "%.@.\"#202124\",\"#1558d6\"]", "%.@.null,null,null,null,null,null,null,\"12px\",\"8px\",\"4px\",\"16px\",\"2px\",\"999rem\",\"0px\"]", "%.@.\"700\",\"400\",\"underline\",\"none\",\"capitalize\",\"none\",\"uppercase\",\"none\",\"500\",\"lowercase\",\"italic\",\"-1px\",\"0.3px\"]", "%.@.\"20px\",\"26px\",\"500\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",null,\"Roboto,Helvetica Neue,Arial,sans-serif\",\"14px\",\"400\",\"20px\",null,\"18px\",\"24px\",\"500\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",null,\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"60px\",\"48px\",\"-1px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"36px\",\"400\",\"48px\",null,\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"32px\",\"24px\",null,\"400\",null,\"Roboto,Helvetica Neue,Arial,sans-serif\",\"24px\",\"18px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"16px\",\"12px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"16px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"26px\",\"20px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"16px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"14px\",null,\"400\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"32px\",\"24px\",null,\"500\"]", "%.@.3]", "%.@.\"13px\",13,\"16px\",16,\"11px\",11,\"0px 1px 4px 0px rgba(0,0,0,0.2)\",632,\"none\",\"normal\",\"normal\",\"#70757a\",\"12px\",\"0\",\"none\",\"none\",\"0\",\"none\",\"none\",\"none\",\"none\",\"6px\"]", "%.@.\"16px\"]", "%.@.\"rgba(0,0,0,0.0)\",\"rgba(0,0,0,0.54)\",\"rgba(0,0,0,0.8)\",\"rgba(248, 249, 250, 0.85)\",\"#202124\",\"#dadce0\",\"rgba(218, 220, 224, 0.0)\",\"rgba(218, 220, 224, 0.7)\",\"#dadce0\",\"#f8f9fa\",\"#000\",\"#1a73e8\",\"#dadce0\",\"#fff\",\"#fff\",\"#e8eaed\"]", "%.@.\"#202124\",\"#70757a\",\"#4d5156\",\"#5f6368\",\"#fff\",\"rgba(255,255,255,.70)\",28,24,20,20,16,-2,-1,-4,2,1,0,24,20,16,14,12]", "%.@.\"20px\",20,\"12px\",12,\"\\\"rgba(0, 0, 0, .87)\\\"\"]", "dochassan12@gmail.com", true, "115595442544954790945", "%.@.2]"]; })();
+    (function() {
+      window.WIZ_global_data = { "QrtxK": "0", "SNlM0e": "AD7QlO5LRLpr6JXPxkeMZ87gW4Al:1635246002836", "S06Grb": "115595442544954790945", "GWsdKe": "en-PK", "w2btAe": "%.@.\"115595442544954790945\",\"115595442544954790945\",\"0\",null,1]", "zChJod": "%.@.]", "LVIXXb": "2", "Yllh3e": "%.@.1635246002358540,169123718,3070569824]", "eptZe": "/wizrpcui/_/WizRpcUi/" };
+      window.IJ_values = [true, true, false, false, false, "0 0 0 1px #ebedef", false, "0 0 0 1px #dadce0", false, "#000", "rgba(0,0,0,.54)", "rgba(0,0,0,.26)", "#fbbc04", "#4285f4", "#1a73e8", "#34a853", "#f8f9fa", "#70757a", "#1e8e3e", "#fff", "rgba(255,255,255,.30)", "#3c4043", "#d93025", "#f29900", false, "invert(1) hue-rotate(180deg)", "#b8bbbe", false, false, true, true, true, "#aecbfa", "#1a73e8", "0 0 0 1px #dadce0", true, true, 36, 20, 28, 6, true, false, false, false, true, "#3c4043", 10, true, true, false, "#f5f5f5", "rgba(0,0,0,.87)", false, "#fff", "0px 5px 26px 0px rgba(0, 0, 0, 0.22), 0px 20px 28px 0px rgba(0, 0, 0, 0.30)", "#4285f4", false, false, false, "#4285f4", true, true, 11, 16, 13, false, false, "#1a73e8", "#188038", "#fff", "#dadce0", "#70757a", "#202124", "20px", true, "#f1f3f4", "#202124", "#202124", "#f1f3f4", 14, "#202124", 40, "#202124", false, "#70757a", "#202124", "#ea4335", "#000", "", "Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "Roboto,Helvetica Neue,Arial,sans-serif", "#dadce0", "#000", "#dadce0", "#000", "#1a73e8", true, true, false, true, false, true, true, false, true, false, "0 2px 10px 0 rgba(0,0,0,0.2)", true, true, "rgba(0,0,0,.12)", "rgba(0,0,0,.26)", "#70757a", "#202124", "rgba(204,204,204,.15)", "rgba(204,204,204,.25)", "rgba(112,117,122,.20)", "rgba(112,117,122,.40)", "#4285f4", "#1558d6", "#34a853", "#ea4335", "#fbbc04", "#f8f9fa", "#f8f9fa", "#f8f9fa", "#70757a", "#202124", "#34a853", "rgba(0,0,0,.12)", "#323232", "#fff", "#fff", "rgba(255,255,255,.30)", "#fff", "#202124", "#fff", "Roboto,RobotoDraft,Helvetica,Arial,sans-serif", "14px", "500", "500", "pointer", "0 1px 1px rgba(0,0,0,.16)", false, "#000", "0 4px 16px rgba(0,0,0,0.2)", "#666", 200, true, true, false, false, true, true, false, true, 13, "#fff", "#FFF", true, "none", "0px 1px 4px 0px rgba(0,0,0,0.2)", "Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif", "#ddd", "none", "1px solid #dfe1e5", "rgba(0, 0, 0, 0.1)", "#dadce0", "#fff", "#1558d6", "#dfe1e5", "#202124", "#70757a", true, true, true, true, false, false, false, false, false, false, true, false, true, false, false, false, false, true, false, false, true, false, true, "8px", "#dfe1e5", true, false, false, "%.@.\"115595442544954790945\",\"115595442544954790945\",\"0\",null,1]", "0", "%.@.null,2,2.75,null,[null,768,393]]", "/WBdYPOUsqsVIO7G4Zguag\u003d\u003d", "%.@.\"#b8bbbe\"]", "%.@.0]", "%.@.2]", "%.@.\"0px 5px 26px 0px rgba(0,0,0,0.22),0px 20px 28px 0px rgba(0,0,0,0.3)\",\"#fff\"]", "%.@.1,null,null,36,28,6,0.3,null,12,null,null,null,null,null,\"#202124\",\"#70757a\",null,\"#202124\",null,null,null,null,null,null,\"#1a73e8\",\"#fabb05\",\"#fff\",\"#1a73e8\",\"#d1d1d1\",\"#fff\",null,1,null,14,500,\"#1558d6\",null,\"#1a73e8\",\"#eeeeee\"]", "%.@.\"#ebeced\",\"#fff\",\"#dadce0\",\"#fff\",\"#3c4043\",\"#dadce0\",\"#dadce0\",\"#bdc1c6\",\"#fff\",\"#3c4043\",\"#202124\",\"#3c4043\",\"#ea4335\",\"#34a853\",\"#202124\",\"#fff\",\"#fff\"]", "%.@.[],0,null,0,0]", "en-PK", "%.@.\"13px\",\"16px\",\"11px\"]", "en_PK", "%.@.\"0px\",0,\"8px\",8]", "%.@.\"14px\",14]", "%.@.40,32,14]", "%.@.\"Roboto-Bold,HelveticaNeue-Bold,HelveticaNeue,sans-serif-bold,Arial,sans-serif\"]", "%.@.\"0 2px 10px 0 rgba(0,0,0,0.2)\"]", "%.@.1,\"14px\",\"500\",\"500\",\"0 1px 1px rgba(0,0,0,.16)\",\"pointer\",\"#000\",\"rgba(0,0,0,.26)\",\"#70757a\",\"#202124\",\"rgba(204,204,204,.15)\",\"rgba(204,204,204,.25)\",\"rgba(112,117,122,.20)\",\"rgba(112,117,122,.40)\",\"#34a853\",\"#4285f4\",\"#1558d6\",\"#ea4335\",\"#fbbc04\",\"#f8f9fa\",\"#f8f9fa\",\"#202124\",\"#34a853\",\"rgba(0,0,0,.12)\",null,\"#fff\",\"rgba(255,255,255,.30)\",\"#fff\",\"#202124\",\"#fff\",1,0]", "%.@.\"20px\",\"500\",\"400\",\"14px\",\"16px\",\"16px\",\"Roboto,RobotoDraft,Helvetica,Arial,sans-serif\",\"24px\",\"400\",\"32px\",\"24px\"]", false, "", "%.@.\"#202124\",\"#3c4043\",\"#1a73e8\",null,\"#70757a\",\"#1558d6\",\"#4b11a8\",null,null,\"#fff\",\"#1a73e8\",\"#fff\",\"#e8f0fe\",\"#1558d6\",\"#f1f3f4\",\"#202124\",\"#fff\",\"#3c4043\",\"#202124\",\"#fff\",\"#fff\",\"#fff\",\"#188038\",\"#d93025\",\"#e37400\",\"#dfe1e5\",\"#f1f3f4\",\"rgba(32,33,36,0.6)\",\"#202124\",\"#dfe1e5\"]", "%.@.null,\"none\",null,\"0px 1px 3px rgba(60,64,67,0.08)\",null,\"0px 2px 6px rgba(60,64,67,0.16)\",null,\"0px 4px 12px rgba(60,64,67,0.24)\",null,null,\"1px solid  #dadce0\",\"none\",\"none\",\"none\"]", "%.@.\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"Roboto-Light,HelveticaNeue-Light,Helvetica Neue,sans-serif-light,Arial,sans-serif\"]", "%.@.\"16px\",\"12px\",\"0px\",\"8px\",\"4px\",\"2px\",\"20px\",\"24px\"]", "%.@.\"#202124\",\"#1558d6\"]", "%.@.null,null,null,null,null,null,null,\"12px\",\"8px\",\"4px\",\"16px\",\"2px\",\"999rem\",\"0px\"]", "%.@.\"700\",\"400\",\"underline\",\"none\",\"capitalize\",\"none\",\"uppercase\",\"none\",\"500\",\"lowercase\",\"italic\",\"-1px\",\"0.3px\"]", "%.@.\"20px\",\"26px\",\"500\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",null,\"Roboto,Helvetica Neue,Arial,sans-serif\",\"14px\",\"400\",\"20px\",null,\"18px\",\"24px\",\"500\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",null,\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"60px\",\"48px\",\"-1px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"36px\",\"400\",\"48px\",null,\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"32px\",\"24px\",null,\"400\",null,\"Roboto,Helvetica Neue,Arial,sans-serif\",\"24px\",\"18px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"16px\",\"12px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"16px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"26px\",\"20px\",null,\"400\",\"Google Sans,Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"16px\",null,\"400\",\"Roboto,Helvetica Neue,Arial,sans-serif\",\"20px\",\"14px\",null,\"400\",\"Google Sans,Roboto-Medium,HelveticaNeue-Medium,Helvetica Neue,sans-serif-medium,Arial,sans-serif\",\"32px\",\"24px\",null,\"500\"]", "%.@.3]", "%.@.\"13px\",13,\"16px\",16,\"11px\",11,\"0px 1px 4px 0px rgba(0,0,0,0.2)\",632,\"none\",\"normal\",\"normal\",\"#70757a\",\"12px\",\"0\",\"none\",\"none\",\"0\",\"none\",\"none\",\"none\",\"none\",\"6px\"]", "%.@.\"16px\"]", "%.@.\"rgba(0,0,0,0.0)\",\"rgba(0,0,0,0.54)\",\"rgba(0,0,0,0.8)\",\"rgba(248, 249, 250, 0.85)\",\"#202124\",\"#dadce0\",\"rgba(218, 220, 224, 0.0)\",\"rgba(218, 220, 224, 0.7)\",\"#dadce0\",\"#f8f9fa\",\"#000\",\"#1a73e8\",\"#dadce0\",\"#fff\",\"#fff\",\"#e8eaed\"]", "%.@.\"#202124\",\"#70757a\",\"#4d5156\",\"#5f6368\",\"#fff\",\"rgba(255,255,255,.70)\",28,24,20,20,16,-2,-1,-4,2,1,0,24,20,16,14,12]", "%.@.\"20px\",20,\"12px\",12,\"\\\"rgba(0, 0, 0, .87)\\\"\"]", "dochassan12@gmail.com", true, "115595442544954790945", "%.@.2]"];
+    })();
   </script>
   <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
     (function() {
@@ -6989,11 +7266,20 @@
       b.prototype.toString = function() { return this.g.toString() };
       var c = /^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i,
         a = {};
-      for (var d = document.querySelectorAll("a[data-amp-sxg]"), e = 0; e < d.length; e++) { var f = d[e],
-          g = f.getAttribute("data-amp-cdn"); if (g) { var h, k; if (g instanceof b) k = g;
-          else { var n = g;
-            n instanceof b ? k = n : (n = "object" == typeof n && n.h ? n.g.toString() : String(n), c.test(n) || (n = "about:invalid#zClosurez"), k = new b(n, a)) } h = k;
-          f.href = h instanceof b && h.constructor === b ? h.g : "type_error:SafeUrl" } };
+      for (var d = document.querySelectorAll("a[data-amp-sxg]"), e = 0; e < d.length; e++) {
+        var f = d[e],
+          g = f.getAttribute("data-amp-cdn");
+        if (g) {
+          var h, k;
+          if (g instanceof b) k = g;
+          else {
+            var n = g;
+            n instanceof b ? k = n : (n = "object" == typeof n && n.h ? n.g.toString() : String(n), c.test(n) || (n = "about:invalid#zClosurez"), k = new b(n, a))
+          }
+          h = k;
+          f.href = h instanceof b && h.constructor === b ? h.g : "type_error:SafeUrl"
+        }
+      };
     }).call(this);
     (function() {
       Object.defineProperties || google.log && google.log("", "nones5");
@@ -7004,16 +7290,21 @@
     (function() { google.xjs = { ck: 'xjs.qs._dGatLx2BJU.L.W.O', cs: 'ACT90oFkzHWdV8eS7vfUCvkMjU0LkNREcw', excm: [] }; })();
   </script>
   <script data-p="" nonce="/WBdYPOUsqsVIO7G4Zguag==">
-    (function() { var u1 = '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/exm\x3dquantum/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi'; var us = ['/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dquantum', '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/exm\x3dquantum/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi'];
+    (function() {
+      var u1 = '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/exm\x3dquantum/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi';
+      var us = ['/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dquantum', '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/exm\x3dquantum/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi'];
       window._DumpException = function(e) { throw e; };
       google.xjsu = u1;
-      google.xjsus = us; })();
+      google.xjsus = us;
+    })();
 
     function _F_installCss(c) {}
     (function() { google.kEXPI = '0,18167,1284369,56873,6058,207,1987,2817,926,1390,145,238,23,223,5,1354,5251,1122515,1223,796345,17,13188,6136,8629,12233,81,251,4,815,877,421,254,81,354,155,356634,684,7,302573,26305,8399,180,3382,3320,2044,314,1526,1770,1137,4795,5298,2488,328,5033,10931,279,1191,14923,7049,2445,3439,845,4693,10213,13149,1800,512,2111,1326,3532,1362,8386,905,447,2578,17583,4020,978,13228,3847,3776,416,6430,2374,1560,448,12,866,12,5,7,2148,14390,919,5081,62,1531,1279,2212,530,149,1103,840,6297,109,2003,1402,606,2023,1777,520,5766,257,320,1617,4133,2577,3227,2845,7,8023,2404,1,1926,5096,1040,3,9934,362,285,4696,908,1,942,2614,12710,432,2,1480,2,109,1,2015,3430,148,6411,4912,2652,3,1529,2304,1236,5803,1395,17,645,2626,2015,4666,131,10268,3310,2658,3438,2285,1632,32,5615,8013,2305,638,1494,13009,3777,811,4989,2,2555,4094,3138,6,908,3,3540,6,11938,1330,1438,1814,283,912,5992,555,11940,4233,1715,1,3037,1663,1202,4654,1817,3581,784,255,737,3813,581,162,5853,6665,3798,670,490,1290,2902,420,2088,2380,2158,561,3714,311,1,5995,2,1032,3038,563,3622,2,6,1,2320,2962,528,1925,872,1061,2635,3857,1853,2,276,265,2,1309,200,1828,681,2,1,3,396,743,2410,5,2924,1,853,3,2,660,1,3774,521,1770,315,230,265,1570,1105,1850,255,964,4979,428,226,328,137,1,1,2,103,825,1,5,504,1,298,1302,107,802,275,315,416,895,293,688,277,493,1701,453,621,146,963,144,139,1,4,2,503,3,8,636,380,12,262,45,920,1,23,1,166,133,152,1245,8,2,39,473,360,1370,253,146,3,2,117,1,92,273,4,84,2,326,622,14,35,641,4,81,127,268,225,118,15,5,186,1301,121,115,46,746,4,662,61,121,61,161,549,17,78,41,641,9,222,2,307,7,41,646,2,368,22,22,116,6,107,340,96,525,267,303,81,264,35,67,7,2,343,2,27,67,1502,679,14,788,3807,117,5547921,101,345,389,2,1802499,95,4193363,520,26778718,219,1515772,2197611,327750,338,3,2414,1491,9,1435,1517,291,115,2816,339,1726,183,19,126,1081,812018'; })();
-    (function() { google.llirm = '400px';
+    (function() {
+      google.llirm = '400px';
       google.ldi = {};
-      google.pim = {}; })();
+      google.pim = {};
+    })();
     (function() {
       var u = '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi';
       var us = ['/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dquantum', '/xjs/_/js/k\x3dxjs.qs.en_GB.W-lh73OXOgg.O/am\x3dOgAQAAACAAiADQAACAAAARCAKvQIlBsEAIA1AkyMEKF9JwTcYAgAAAMSBAgAAQR4gAAAAAAfjb5GclAA_olKuAAAAAAAAMALHIZ5VPAAEAAEAAAAAKPQdQIAACGAAAAg/d\x3d1/exm\x3dquantum/ed\x3d1/dg\x3d2/br\x3d1/rs\x3dACT90oHYPwsCtKX5mTyytug3ChNm4QsU-A/m\x3dcdos,mpf,hsm,qim,pvtlp,jsa,d,csi'];
@@ -7025,11 +7316,15 @@
       var h = {};
       var m = function() { var b = document; var a = "SCRIPT"; "application/xhtml+xml" === b.contentType && (a = a.toLowerCase()); return b.createElement(a) };
 
-      function n() { var b = u,
+      function n() {
+        var b = u,
           a = us;
-        google.lx = function() { p(b, a);
-          google.lx = function() {} };
-        google.bx || google.lx() }
+        google.lx = function() {
+          p(b, a);
+          google.lx = function() {}
+        };
+        google.bx || google.lx()
+      }
 
       function q(b, a) {
         if (void 0 === g) { var c = null; var k = e.trustedTypes; if (k && k.createPolicy) { try { c = k.createPolicy("goog#html", { createHTML: f, createScript: f, createScriptURL: f }) } catch (r) { e.console && e.console.error(r.message) } g = c } else g = c } a = (c = g) ? c.createScriptURL(a) : a;
@@ -7042,10 +7337,14 @@
         document.body.appendChild(b)
       }
 
-      function p(b, a) { google.timers && google.timers.load && google.tick && google.tick("load", "xjsls"); var c = m(); if (a && 0 < a.length && "async" in c)
+      function p(b, a) {
+        google.timers && google.timers.load && google.tick && google.tick("load", "xjsls");
+        var c = m();
+        if (a && 0 < a.length && "async" in c)
           for (b = 0; b < a.length; b++) 0 < b && (c = m()), c.async = !1, c.onload = function() { return void(google.mum && google.mum()) }, q(c, a[b]);
         else q(c, b);
-        google.psa = !0 };
+        google.psa = !0
+      };
       setTimeout(function() { n() }, 0);
     })();
   </script>
@@ -7067,9 +7366,14 @@
   <div id="lfootercc">
     <script nonce="/WBdYPOUsqsVIO7G4Zguag==">
       (function() { for (var i in google.iir || {}) { _setImagesSrc([i], google.iir[i]); } google.iir = {}; })();
-      (function() { var _jnu = 'https://www.google.com/ads/measurement/t'; var _jnuid = 2500;
-        google.x({ 'id': 'jnu' }, function() { var bt = google.sx && google.sx.setTimeout || window.setTimeout;
-          bt(function() { google.log('', '', _jnu); }, _jnuid); }); })();
+      (function() {
+        var _jnu = 'https://www.google.com/ads/measurement/t';
+        var _jnuid = 2500;
+        google.x({ 'id': 'jnu' }, function() {
+          var bt = google.sx && google.sx.setTimeout || window.setTimeout;
+          bt(function() { google.log('', '', _jnu); }, _jnuid);
+        });
+      })();
     </script>
     <style>
       .TBC9ub {
@@ -8662,9 +8966,12 @@
         (function() { window.jsl.dh('rp_38', '\x3cdiv class\x3d\x22bHXNeoCNSPo__result-pivots fexp-hide\x22 data-has-close\x3d\x22\x22 data-has-queries\x3d\x22\x22 data-link\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x22 data-result-click-duration-threshold\x3d\x2230\x22 data-sup-ad-url-log\x3d\x22\x22 jsname\x3d\x22E3SGid\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQx40DegQIQhAA\x22\x3e\x3cdiv jsname\x3d\x22G0pmF\x22 class\x3d\x22gg4UKb\x22\x3e\x3cdiv class\x3d\x22Z9yYEe s8bAkb c3FcVe uYZpsf Tbiej\x22\x3e\x3cdiv class\x3d\x22OgPVad n9iHLc BBwThe ouy7Mc cB4NFc GUHazd OhScic V88cHc\x22 aria-level\x3d\x224\x22 role\x3d\x22heading\x22\x3ePeople also search for\x3c/div\x3e\x3c/div\x3e\x3cdiv\x3e\x3cdiv class\x3d\x22hWIMdd U09Jxd Aajd3 v0rrvd\x22\x3e\x3cdiv class\x3d\x22X9ztFe\x22\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22clinical diagnosis\x22 data-l2\x3d\x22vs medical diagnosis\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAB6BAhCEAI\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22diagnosis\x22 data-l2\x3d\x22definition\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAF6BAhCEAM\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22types of\x22 data-l2\x3d\x22diagnosis\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAJ6BAhCEAQ\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22diagnosis and\x22 data-l2\x3d\x22treatment\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAN6BAhCEAU\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22examples of\x22 data-l2\x3d\x22clinical diagnosis\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAR6BAhCEAY\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22clinical diagnosis vs\x22 data-l2\x3d\x22pathological diagnosis\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAV6BAhCEAc\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22importance of\x22 data-l2\x3d\x22clinical diagnosis\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAZ6BAhCEAg\x22\x3e\x3c/a\x3e\x3ca jsname\x3d\x22dvJQC\x22 data-l1\x3d\x22diagnosis\x22 data-l2\x3d\x22example\x22 data-query-style\x3d\x220\x22 data-two-line\x3d\x22true\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsKwBKAd6BAhCEAk\x22\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cspan jsname\x3d\x22plIjzf\x22 class\x3d\x22Z6RHod\x22 aria-label\x3d\x22Dismiss suggested follow ups\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22\x3e\x3c/span\x3e\x3c/div\x3e'); })();
         (function() { window.jsl.dh('dub_13', '\x3cdiv class\x3d\x22AuVD wHYlTd mnr-c\x22 jscontroller\x3d\x22ILbBec\x22 data-qc\x3d\x22c-NSSMlMTM_LL84sVgCi5JzMvMzkxByFlNQ0IKskMz9PgEGCEQA\x22 jsaction\x3d\x22eHoxpe:mf6oX;gfuQLd:xYOpdf;igAUP:mKBFVe;HUiaHb:mlZWMd;tDWjnb:TsWWjb;rcuQ6b:npT2md\x22 data-hveid\x3d\x22CEQQAA\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ26YDegQIRBAA\x22\x3e\x3cdiv class\x3d\x22ouy7Mc\x22\x3e\x3cdiv class\x3d\x22S4UV0 r2fjmd pAbhZc ouy7Mc cB4NFc GUHazd\x22\x3e\x3cdiv class\x3d\x22sATBQc\x22\x3e\x3cdiv aria-level\x3d\x222\x22 role\x3d\x22heading\x22\x3e\x3cspan class\x3d\x22xOTFk OSrXXb aTI8gc RES9jf\x22\x3eRelated searches\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3cspan class\x3d\x22gduDCb\x22\x3e\x3cdiv\x3e\x3cdiv jscontroller\x3d\x22exgaYe\x22 data-acc\x3d\x22n\x22 data-enjspb\x3d\x22true\x22 jsdata\x3d\x22l7Bhpb;_;AAHUkg\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ2esEegQIRBAC\x22\x3e\x3cdiv jsaction\x3d\x22KyPa0e:WZTn;wjOG7e:edHC5b;al5F3e:edHC5b;\x22\x3e\x3cdiv role\x3d\x22button\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22WZTn\x22 jsname\x3d\x22I3kE2c\x22 class\x3d\x22iTPLzd lUn2nc cB4NFc Aajd3\x22 style\x3d\x22padding-right:12px;position:absolute\x22 aria-label\x3d\x22About this Result\x22\x3e\x3cspan jsname\x3d\x22czHhOd\x22 class\x3d\x22D6lY4c\x22\x3e\x3cspan jsname\x3d\x22Bil8Ae\x22 class\x3d\x22xTFaxe IjabWd z1asCe SaPW2b\x22 style\x3d\x22height:18px;line-height:18px;width:18px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/span\x3e\x3c/div\x3e\x3cspan jsname\x3d\x22zOVa8\x22 jsmodel\x3d\x22QaFSEb\x22 jsdata\x3d\x22l7Bhpb;_;AAHUk0\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQh-4GegQIRBAD\x22\x3e\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22e2kKGc\x22 class\x3d\x22ebWQmb\x22 style\x3d\x22display:none\x22\x3e\x3cg-loading-icon class\x3d\x22v5nPIf GuPFE VDgVie\x22 style\x3d\x22height:30px;min-width:30px\x22\x3e\x3cdiv class\x3d\x22pSFfp fY2Z0\x22 style\x3d\x22height:30px;width:30px\x22 aria-valuetext\x3d\x22Loading...\x22 role\x3d\x22progressbar\x22\x3e\x3cdiv class\x3d\x22yiqufc jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22e3Nvve jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22kpjGNb jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22Ft8sDf jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/g-loading-icon\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22N760b\x22 data-bs\x3d\x22c22OzQsBQRjGb8ojBxTbFt62nLQhDpwcLOWm_AWv3VlGszPTmHz89yRK2dv7vP2eDyzRTmSeCye0l6wok3zU5iIv0QDYn8xt_fr7R7ODyueqhzVUR8VoPLXn2RwRaFtY4zzrVJDJKVVSy_Q3Ci00kq8gcefCKoEYw9UfSqwzUnwwjr1xj5-MProl-KuvYMVOMkIEJUBM1noQev-z3mPNVWbxZIEA7RL3Ltk8AQ\x22 id\x3d\x22_st93YYzxFYa_UuDalLgL51\x22\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv jscontroller\x3d\x22u9IERe\x22 class\x3d\x22UlIbl\x22 jsaction\x3d\x22rcuQ6b:npT2md\x22 data-hveid\x3d\x22CFgQAA\x22\x3e\x3cdiv jsname\x3d\x22F79BRe\x22 jscontroller\x3d\x22jWdabd\x22 class\x3d\x22z9gcx\x22 data-q\x3d\x22Differential diagnosis\x22 jsshadow\x3d\x22\x22 jsaction\x3d\x22rcuQ6b:npT2md;nGGCPe:Y0mHQe;HQ3mne:uLG0Sd;o2t4Re:mhSdVe\x22\x3e\x3cdiv jsname\x3d\x22bVEB4e\x22 class\x3d\x22wWOJcd\x22 aria-controls\x3d\x22exacc_st93YYzxFYa_UuDalLgL60\x22 aria-expanded\x3d\x22false\x22 aria-labelledby\x3d\x22exacc_st93YYzxFYa_UuDalLgL59\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22AWEk5c\x22\x3e\x3cdiv jsname\x3d\x22pp2M3\x22\x3e\x3cdiv class\x3d\x22sFq2Xc\x22 jsslot\x3d\x22\x22\x3e\x3cdiv jsname\x3d\x22Rx94\x22 class\x3d\x22BggCXc\x22\x3e\x3cdiv class\x3d\x22BRjlS zVq10e\x22\x3e\x3c/div\x3e\x3cdiv class\x3d\x22EUgfde zVq10e\x22\x3e\x3cimg alt\x3d\x22Image of Differential diagnosis\x22 class\x3d\x22c9uTp\x22 data-src\x3d\x22https://encrypted-tbn0.gstatic.com/images?q\x3dtbn:ANd9GcSSMgot1HlInX6OInibACwjaXQTBewZpbLPfVfE7Q\x26amp;s\x3d0\x22 style\x3d\x22height:40px;width:93px;margin-left:-27px;margin-right:calc(100% - 93px - -27px)\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22jIA8B\x22 class\x3d\x22iDjcJe wHYlTd JIFdL\x22 id\x3d\x22exacc_st93YYzxFYa_UuDalLgL59\x22\x3e\x3cspan\x3eDifferential diagnosis\x3c/span\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Q8Kwad\x22 class\x3d\x22YsGUOb\x22\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22K8Pnod\x22 class\x3d\x22r21Kzd\x22 data-hveid\x3d\x22CFgQAQ\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ3aYDegQIWBAB\x22\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Fus96e\x22 class\x3d\x22guvigf\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ36YDegQIWBAC\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22rozPHf\x22 class\x3d\x22MBtdbb\x22 id\x3d\x22exacc_st93YYzxFYa_UuDalLgL60\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ7NUEegQIWBAD\x22\x3e\x3cdiv class\x3d\x22ymu2Hb\x22 jsslot\x3d\x22\x22\x3e\x3cdiv jsname\x3d\x22PBWx0c\x22 class\x3d\x22MPccaf\x22 data-hveid\x3d\x22CFgQBA\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ-5gEegQIWBAE\x22\x3e\x3cdiv jsname\x3d\x22rIHOuf\x22 class\x3d\x22IvgBje\x22\x3e\x3cdiv jsname\x3d\x22ANj3Z\x22 class\x3d\x22cNkYEb q2K6Pe\x22\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22IhyuZd\x22 class\x3d\x22UkqIHc diAzE TSdv3\x22\x3e\x3ca class\x3d\x22W4LuJe\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dDifferential+diagnosis\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQsZYEegQIWBAF\x22\x3e\x3cdiv class\x3d\x22mQDzgb OZ5bRd TBC9ub CJHX3e gxMdVd Aajd3\x22\x3e\x3cdiv class\x3d\x22XrtUhc\x22\x3e\x3cspan\x3eDifferential diagnosis\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22qMoLuc\x22 class\x3d\x22E8CMCc\x22 jsmodel\x3d\x22Wn3aEc\x22 jscontroller\x3d\x22dk1E6d\x22 jsshadow\x3d\x22\x22 jsaction\x3d\x22PdWSXe:h5M12e;rcuQ6b:npT2md\x22 jsdata\x3d\x22X2sNs;_;AAHUmo\x22\x3e\x3cdiv jsslot\x3d\x22\x22 class\x3d\x22Kj6aYd\x22\x3e\x3cdiv jsname\x3d\x22qJKY4d\x22 class\x3d\x22dd82uf\x22\x3e\x3cdiv\x3e\x3cdiv class\x3d\x22mtzV0\x22\x3e\x3c/div\x3e\x3cdiv class\x3d\x22ivg-i\x22 role\x3d\x22button\x22 tabindex\x3d\x220\x22 jsaction\x3d\x22trigger.PdWSXe\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ4KYDegQIWBAG\x22\x3e\x3cimg alt\x3d\x22Image of Differential diagnosis\x22 class\x3d\x22c9uTp\x22 data-src\x3d\x22https://encrypted-tbn0.gstatic.com/images?q\x3dtbn:ANd9GcSSMgot1HlInX6OInibACwjaXQTBewZpbLPfVfE7Q\x26amp;s\x3d0\x22 style\x3d\x22height:58px;width:135px;margin-left:-38px;margin-right:calc(100% - 135px - -38px)\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22OpnSP\x22 style\x3d\x22display:none\x22\x3e\x3cdiv data-veid\x3d\x223590\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQhhx6BAhYEAg\x22\x3e\x3c/div\x3e\x3cdiv data-veid\x3d\x223589\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQhRx6BAhYEAk\x22\x3e\x3c/div\x3e\x3cdiv data-veid\x3d\x2219150\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQzpUBegQIWBAK\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22ij8cu\x22 class\x3d\x22T26EAb hWIMdd ouy7Mc v0rrvd\x22\x3e\x3ca class\x3d\x22NPb5dd\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dDifferential+diagnosis\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ-pgEegQIWBAL\x22\x3eIn healthcare, a differential diagnosis is a method of analysis of a patient\x27s history and physical examination to arrive at the correct diagnosis. It involves distinguishing a particular disease or condition from others that present with similar clinical features.\x3c/a\x3e\x3cspan\x3e\x3cspan\x3e \x3c/span\x3e\x3ca class\x3d\x22b0bgab\x22 href\x3d\x22https://en.wikipedia.org/wiki/Differential_diagnosis\x22 ping\x3d\x22/url?sa\x3dt\x26amp;source\x3dweb\x26amp;rct\x3dj\x26amp;url\x3dhttps://en.wikipedia.org/wiki/Differential_diagnosis\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQFnoECFgQDQ\x26amp;usg\x3dAOvVaw2pNwTcmNGopCeEvIwUB4MK\x22 oncontextmenu\x3d\x22google.ctpacw.cm(this)\x22\x3eWikipedia\x3c/a\x3e\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22MgN2vf\x22 class\x3d\x22hwqd7e pkG1D VDgVie InI2pf Wt5Tfe\x22\x3e\x3ca class\x3d\x22OdBhM Wt5Tfe K3M0Td\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dDifferential+diagnosis\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ4qYDegQIWBAO\x22 aria-label\x3d\x22Search for Differential diagnosis\x22\x3e\x3cdiv class\x3d\x22lqQNEe OSrXXb r2fjmd s8bAkb c3FcVe eY4mx q2K6Pe\x22\x3e\x3cspan class\x3d\x22VqVmtb ULP2eb S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3cspan class\x3d\x22ZroESc\x22\x3eDifferential diagnosis\x3c/span\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22grQLgb\x22 class\x3d\x22yp\x22 data-async-fc\x3d\x22Ep4BCmJBTWx2cnBzcnVvOUdVSGRTWFV6UDZUV3ZXbkNBWGl3Nm5NT2NlMGg4QUlRakFUb2FHZnZwU0JHNk5DQzJJQmdCcWxhRF9ESy1VVUYwRUFiNHBsOHBxY2puSEEyS2psZjlkZxIUc3Q5M1lZenhGWWFfVXVEYWxMZ0waIkFIV1NObVVSWnNESmNsSEhxeDJTSi1jVUo4VGxMT1lOdnc\x22 data-async-fcv\x3d\x223\x22 data-async-ons\x3d\x22620\x22 id\x3d\x22fc_52\x22 data-ved\x3d\x222ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQzOMHKAJ6BAhEEAU\x22\x3e   \x3c/div\x3e\x3cg-loading-icon jsname\x3d\x22aZ2wEe\x22 class\x3d\x22nhGGkb S3PB2d v5nPIf GuPFE VDgVie\x22 style\x3d\x22display:none;height:30px;min-width:30px\x22\x3e\x3cdiv class\x3d\x22pSFfp fY2Z0\x22 style\x3d\x22height:30px;width:30px\x22 aria-valuetext\x3d\x22Loading...\x22 role\x3d\x22progressbar\x22\x3e\x3cdiv class\x3d\x22yiqufc jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22e3Nvve jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22kpjGNb jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22Ft8sDf jg5aPd\x22\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac ZvZqlb\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22YvBkFd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe m0HFif\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv class\x3d\x22r1glSd\x22\x3e\x3cdiv class\x3d\x22wgim3c jWrfPe unqUac tJdqHd\x22\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/g-loading-icon\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CFMQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dImportance+of+clinical+diagnosis\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhTEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eImportance of clinical diagnosis\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CEgQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dDiagnosis+example\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhIEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eDiagnosis example\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CEsQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dClinical+diagnosis+and+laboratory+diagnosis\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhLEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eClinical diagnosis and laboratory diagnosis\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CFIQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dClinical+diagnosis+of+malaria\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhSEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eClinical diagnosis of malaria\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CEoQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dClinical+diagnosis+-+ppt\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhKEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eClinical diagnosis - ppt\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CFQQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dclinical+diagnosis+of+covid-19\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhUEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eclinical diagnosis of covid-19\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3cdiv jsname\x3d\x22Cpkphb\x22\x3e\x3cdiv class\x3d\x22hcuDkb zbp8B\x22 style\x3d\x22position:relative\x22\x3e\x3c/div\x3e\x3cdiv data-hveid\x3d\x22CEkQAA\x22\x3e\x3ca class\x3d\x22iOJVmb\x22 href\x3d\x22/search?sxsrf\x3dAOaemvJGnEeZtspEdyvV-7GEd0KJ8ACzGw:1635246002367\x26amp;q\x3dClinical+diagnosis+PDF\x26amp;sa\x3dX\x26amp;ved\x3d2ahUKEwiMkt2I9ufzAhWGnxQKHWAtBbcQ1QJ6BAhJEAE\x22\x3e\x3cdiv class\x3d\x22GeBYfd OvQkSb eJtrMc\x22\x3e\x3cspan class\x3d\x22QYwfLe S003Ke ZoN4Lb z1asCe MZy1Rb\x22 style\x3d\x22height:20px;line-height:20px;width:20px\x22\x3e\x3csvg focusable\x3d\x22false\x22 xmlns\x3d\x22http://www.w3.org/2000/svg\x22 viewBox\x3d\x220 0 24 24\x22\x3e\x3cpath d\x3d\x22M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\x22\x3e\x3c/path\x3e\x3c/svg\x3e\x3c/span\x3e\x3c/div\x3e\x3cdiv class\x3d\x22gbCQS u60jwe gduDCb\x22\x3e\x3cdiv class\x3d\x22UyMe2e wJIB9 ZCbA7b\x22\x3e\x3cspan class\x3d\x22JCaUEf\x22\x3eClinical diagnosis PDF\x3c/span\x3e\x3c/div\x3e\x3c/div\x3e\x3c/a\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e'); })();
         (function() { window['W_jd']['AAHUmo'] = JSON.parse('[[null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,\x22Differential diagnosis\x22],[[[null,\x22khBNE7FanWHyOM\x22,[\x22http://t2.gstatic.com/images?q\\u003dtbn:ANd9GcTuEPHU54glOG_EZ2K2QvI2LsaAaf_QmkgujRO0LrD-L4_kTlcaLzhw3w\x22,147,343],[\x22https://www.researchgate.net/publication/312504220/figure/fig2/AS:614089768304642@1523421818569/Flow-chart-of-the-DTS-Panel-clinical-approach-A-differential-diagnosis-is-achieved.png\x22,364,850],{\x222003\x22:[null,\x228448983219036485676\x22,\x22https://www.researchgate.net/figure/Flow-chart-of-the-DTS-Panel-clinical-approach-A-differential-diagnosis-is-achieved_fig2_312504220\x22]}]]],[\x22AOvVaw3ebnpof0T3CrEFyDr9mKzY\\u0026ust\\u003d1635332402847401\x22,null,1,null,null,null,null,null,null,null,null,null,0,0,1,1,null,null,null,null,null,null,null,null,null,null,1,null,1,null,null,null,1,null,null,null,null,null,null,1,null,100,null,null,null,0,null,1,null,null,null,null,null,1,\x22QUANTUM\x22,null,20,\x22Related image\x22,8,null,\x22%1$d\\u0026nbsp;\\u0026#215;\\u0026nbsp;%2$d\x22,null,null,null,null,null,null,8,null,0,\x22#fff\x22,0,null,null,1,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,2]]'); })();
-        (function() { google.drty && google.drty(undefined, true); })(); });
-      (function() { google.lfj = true;
-        google.ldilf = { "iuxup_st93YYzxFYa_UuDalLgL57": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcTvbKQmy5qtV69Yc_FrNHpAgL7ITOxhXQFAtasb-A\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL61": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcTvbKQmy5qtV69Yc_FrNHpAgL7ITOxhXQFAtasb-A\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL63": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcS3omA5McPugZ3HHaJmBK2kvP7kNSrYgaFmFa7bUJ4\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL65": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcQEUjUtVkB94gtUFIKkzXB420Spu1-tbATonfp5HXU\u0026s\u003d0" }; })();
+        (function() { google.drty && google.drty(undefined, true); })();
+      });
+      (function() {
+        google.lfj = true;
+        google.ldilf = { "iuxup_st93YYzxFYa_UuDalLgL57": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcTvbKQmy5qtV69Yc_FrNHpAgL7ITOxhXQFAtasb-A\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL61": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcTvbKQmy5qtV69Yc_FrNHpAgL7ITOxhXQFAtasb-A\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL63": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcS3omA5McPugZ3HHaJmBK2kvP7kNSrYgaFmFa7bUJ4\u0026s\u003d0", "iuxui_st93YYzxFYa_UuDalLgL65": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcQEUjUtVkB94gtUFIKkzXB420Spu1-tbATonfp5HXU\u0026s\u003d0" };
+      })();
     </script>
     <div id="dbg_"></div>
   </div>
