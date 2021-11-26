@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Text</title>
+    <style>
+    body{
+      background-color: #efe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      height: 100vh;
+    }
+      .image-text {
+  background-image: url(https://picsum.photos/id/865/300/100);
+  background-size: cover;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  
+  /* other styling */
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+  text-transform: uppercase;
+  font-size: calc(3rem + 7vw);
+  line-height: .8;
+  text-align: center;
+  margin: 0;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="content">
+  <h2 class="image-text">This is pretty easy!</h2>
+</div>
+
+</body>
+
+</html>
