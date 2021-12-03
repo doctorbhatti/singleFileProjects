@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theme Toggler</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: currentColor;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 1em;
+      clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+      background: var(--bg-nav);
+      margin-bottom: 1em;
+      padding-bottom: 3.5em;
+      text-align: center;
+    }
+
+    main {
+      min-height: 1000px;
+      padding: 2rem;
+    }
+
+    img {
+      margin: 2em 0 0;
+      width: 180px;
+      height: 180px;
+    }
+
+    /* Navbar */
+
+    .navbar {
+      height: 70px;
+      width: 100%;
+      background: var(--bg-nav);
+      color: var(--text);
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+
+    .dropdown {
+      position: absolute;
+      width: 500px;
+      opacity: 0;
+      z-index: 2;
+      background: var(--bg-dropdown);
+      border-top: 2px solid var(--border-color);
+
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 3rem;
+      margin-top: 2rem;
+      padding: 0.5rem;
+
+      box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+      transform: translateX(-40%);
+
+      transition: opacity .15s ease-out;
+    }
+
+
+    .has-dropdown:focus-within .dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+    .dropdown-item a {
+      width: 100%;
+      height: 100%;
+      size: 0.7rem;
+      padding-left: 10px;
+      font-weight: bold;
+    }
+
+    .dropdown-item a::before {
+      content: ' ';
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+
+    /* Themes */
+
+
+    :root {
+      --gray0: #f8f8f8;
+      --gray1: #dbe1e8;
+      --gray2: #b2becd;
+      --gray3: #6c7983;
+      --gray4: #454e56;
+      --gray5: #2a2e35;
+      --gray6: #12181b;
+      --blue: #0084a5;
+      --purple: #a82dd1;
+      --yellow: #fff565;
+    }
+
+    .light {
+      --bg: var(--gray0);
+      --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+      --bg-dropdown: var(--gray0);
+      --text: var(--gray6);
+      --border-color: var(--blue);
+      --bg-solar: var(--yellow);
+    }
+
+
+    .dark {
+      --bg: var(--gray5);
+      --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+      --bg-dropdown: var(--gray6);
+      --text: var(--gray0);
+      --border-color: var(--purple);
+      --bg-solar: var(--blue);
+    }
+
+    .solar {
+      --gray0: #fbffd4;
+      --gray1: #f7f8d0;
+      --gray2: #b6f880;
+      --gray3: #5ec72d;
+      --gray4: #3ea565;
+      --gray5: #005368;
+      --gray6: #003d4c;
+    }
+
+
+    #dark::before {
+      background: #2a2e35;
+    }
+
+    #light::before {
+      background: #ffffff;
+    }
+
+    #solar::before {
+      background: var(--bg-solar);
+    }
+
+
+    /* Logo Animation */
+
+
+    @keyframes color-rotate {
+      from {
+        filter: hue-rotate(0deg);
+      }
+
+      to {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+
+    .logo:hover {
+      animation: color-rotate 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  </style>
+</head>
+
+<body class="light">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">Home</li>
+      <li class="nav-item">About</li>
+      <!-- Dropdown -->
+      <li class="nav-item has-dropdown">
+        <a href="#">Theme</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a id="light" href="#">light</a>
+          </li>
+          <li class="dropdown-item">
+            <a id="dark" href="#">dark</a>
+          </li>
+          <li class="dropdown-item">
+            <a id="solar" href="#">solarize</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">Login</li>
+    </ul>
+  </nav>
+  <header>
+    <img src="logo.png" class="logo" />
+    <h1>Front-End Web Development,<br />Fired Up</h1>
+    <p>Flutter, Firebase, JavaScript, Node.js</p>
+  </header>
+  <main>
+    <h3>Sailor Ipsum</h3>
+    <p>
+      Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+      yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+      yardarm hempen halter furl. Swab barque interloper chantey doubloon
+      starboard grog black jack gangway rutters.
+    </p>
+    <p>
+      Deadlights jack lad schooner scallywag dance the hempen jig carouser
+      broadside cable strike colors. Bring a spring upon her cable holystone
+      blow the man down spanker Shiver me timbers to go on account lookout
+      wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot
+      yardarm spyglass sheet transom heave to.
+    </p>
+    <p>
+      Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway.
+      Case shot Shiver me timbers gangplank crack Jennys tea cup ballast
+      Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas
+      boatswain schooner gaff booty Jack Tar transom spirits.
+    </p>
+    <h3>Sailor Ipsum</h3>
+    <p>
+      Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+      yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+      yardarm hempen halter furl. Swab barque interloper chantey doubloon
+      starboard grog black jack gangway rutters.
+    </p>
+    <p>
+      Deadlights jack lad schooner scallywag dance the hempen jig carouser
+      broadside cable strike colors. Bring a spring upon her cable holystone
+      blow the man down spanker Shiver me timbers to go on account lookout
+      wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot
+      yardarm spyglass sheet transom heave to.
+    </p>
+    <p>
+      Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway.
+      Case shot Shiver me timbers gangplank crack Jennys tea cup ballast
+      Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas
+      boatswain schooner gaff booty Jack Tar transom spirits.
+    </p>
+  </main>
+  <script>
+    // DOM Elements
+
+    const darkButton = document.getElementById('dark');
+    const lightButton = document.getElementById('light');
+    const solarButton = document.getElementById('solar');
+    const body = document.body;
+
+
+    // Apply the cached theme on reload
+
+    const theme = localStorage.getItem('theme');
+    const isSolar = localStorage.getItem('isSolar');
+
+    if (theme) {
+      body.classList.add(theme);
+      isSolar && body.classList.add('solar');
+    }
+
+    // Button Event Handlers
+
+    darkButton.onclick = () => {
+      body.classList.replace('light', 'dark');
+      localStorage.setItem('theme', 'dark');
+    };
+
+    lightButton.onclick = () => {
+      body.classList.replace('dark', 'light');
+
+      localStorage.setItem('theme', 'light');
+    };
+
+    solarButton.onclick = () => {
+
+      if (body.classList.contains('solar')) {
+
+        body.classList.remove('solar');
+        solarButton.style.cssText = `
+      --bg-solar: var(--yellow);
+    `
+
+        solarButton.innerText = 'solarize';
+
+        localStorage.removeItem('isSolar');
+
+      } else {
+
+        solarButton.style.cssText = `
+      --bg-solar: white;
+    `
+
+        body.classList.add('solar');
+        solarButton.innerText = 'normalize';
+
+        localStorage.setItem('isSolar', true);
+      }
+    };
+  </script>
+</body>
+
+</html>
