@@ -14,13 +14,21 @@
       height: 250px;
       width: 250px;
       border-radius: 50%;
-      border: 10px solid #fff;
+    }
+
+    #gradient {
+      height: 270px;
+      width: 270px;
+      background: linear-gradient(to right, #04FFC3, #0955E2);
+      border-radius: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center
     }
 
     #notCropped {
       height: 250px;
       width: 250px;
-      border: 10px solid #fff;
     }
 
     #centered {
@@ -33,13 +41,17 @@
 
 <body>
   <div id="centered">
-    <img id="cropped" src="sampleImage.jpg" alt="Sample Image">
+    <div id="gradient">
+      <img id="cropped" src="sampleImage.jpg" alt="Sample Image">
+    </div>
   </div>
   <div id="centered">
     <h3 style="color: #fff"> Image Cropped Into Circle</h3>
   </div>
   <div id="centered">
-    <img id="notCropped" src="sampleImage.jpg" alt="Sample Image">
+    <div id="gradient" style="border-radius: 0% !important">
+      <img id="notCropped" src="sampleImage.jpg" alt="Sample Image">
+    </div>
   </div>
   <div id="centered">
     <h3 style="color: #fff"> Original Image</h3>
