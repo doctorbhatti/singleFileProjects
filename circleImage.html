@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Circular Image Using CSS</title>
+  <style>
+    html {
+      background: #000;
+    }
+
+    #cropped {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      border: 10px solid #fff;
+    }
+
+    #notCropped {
+      height: 250px;
+      width: 250px;
+      border: 10px solid #fff;
+    }
+
+    #centered {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+  </style>
+</head>
+
+<body>
+  <div id="centered">
+    <img id="cropped" src="sampleImage.jpg" alt="Sample Image">
+  </div>
+  <div id="centered">
+    <h3 style="color: #fff"> Image Cropped Into Circle</h3>
+  </div>
+  <div id="centered">
+    <img id="notCropped" src="sampleImage.jpg" alt="Sample Image">
+  </div>
+  <div id="centered">
+    <h3 style="color: #fff"> Original Image</h3>
+  </div>
+</body>
+
+</html>
