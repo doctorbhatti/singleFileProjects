@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Candle Lite</title>
+
+  <style>
+    * {
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box
+    }
+
+    body {
+
+      align-items: center;
+
+      justify-content: center;
+
+      display: grid;
+
+      background: black;
+
+      margin-top: 150px
+    }
+
+    .main {
+      display: grid;
+
+      position: relative;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: wheat;
+
+      height: 250px;
+
+      width: 30px;
+
+      top: 152px;
+
+      border-top-left-radius: 5px;
+
+      border-top-right-radius: 5px
+    }
+
+    .objct {
+      position: absolute;
+
+      height: 20px;
+
+      width: 2px;
+
+      background: wheat;
+    }
+
+    .lite {
+      background-color: wheat;
+
+      height: 12px;
+
+      width: 5px;
+
+      border-radius: 10px;
+
+      position: rela;
+
+      left: 176px;
+
+      top: 293px
+    }
+
+    .rote {
+
+      border-bottom: 45px solid wheat;
+
+      height: 100px;
+
+      width: 30.01px;
+
+      border-radius: 100%;
+
+      position: absolute;
+
+      top: 246px
+    }
+
+
+    .shado {
+      background-color: yellow;
+
+      height: 50px;
+
+      width: 18px;
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      top: 248px;
+
+      left: 170px;
+
+      animation: shad 5s linear infinite;
+
+      box-shadow: 0 0 5px yellow,
+
+        0 0 5px yellow,
+
+        0 0 15px orange,
+
+        0 0 25px yellow,
+
+        0 0 35px orange,
+
+        0 0 45px yellow,
+
+        0 0 50px orange;
+
+    }
+
+    .shado::before {
+      position: absolute;
+
+      content: '';
+
+        top: 28px;
+
+      left: 5px;
+
+      opacity: .3;
+
+      background: orange;
+
+      height: 21px;
+
+      width: 6px;
+
+      border-radius: 50%;
+
+      box-shadow: 0 0 10px orange,
+
+        0 0 25px orange, 0 0 30px orange, 0 0 35px orange, 0 0 40px orange;
+
+    }
+
+    @keyframes shad {
+
+      0% {
+        transform: translateX(2px);
+        transform: rotate(3deg);
+
+        10% transform: translateX(-2px);
+        transform: rotate(-3deg);
+      }
+
+      25% {
+        transform: translateX(2px);
+        transform: rotate(3deg);
+      }
+
+      50% {
+        transform: translateX(-2px);
+
+        transform: rotate(-3deg);
+      }
+
+      75% {
+        transform: translateX(2px);
+        transform: rotate(3deg);
+      }
+
+      10% {
+        transform: translateX(-2px);
+        transform: rotate(-3deg);
+      }
+
+      25% {
+        transform: translateX(2px);
+        transform: rotate(3deg);
+
+      }
+
+      50% {
+        transform: translateX(-2px);
+        transform: rotate(-3deg);
+      }
+
+      75% {
+        transform: translateX(2px);
+        transform: rotate(3deg);
+      }
+    }
+    .centred{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="centred">
+    <div class="candle">
+
+      <div class="main"></div>
+
+      <div class="objct"></div>
+
+      <div class="lite"></div>
+
+      <div class="shado"></div>
+
+      <div class="rote">
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
